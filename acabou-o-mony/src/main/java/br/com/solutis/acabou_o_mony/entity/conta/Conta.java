@@ -1,9 +1,8 @@
 package br.com.solutis.acabou_o_mony.entity.conta;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import br.com.solutis.acabou_o_mony.entity.Usuario;
+import br.com.solutis.acabou_o_mony.entity.cartao.Cartao;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,4 +21,10 @@ public class Conta {
     private Double saldo;
     private Status status;
     private Date data_criacao;
+
+    @OneToOne
+    private Cartao cartao;
+
+    @ManyToOne
+    private Usuario usuario;
 }

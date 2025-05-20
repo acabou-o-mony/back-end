@@ -1,9 +1,7 @@
 package br.com.solutis.acabou_o_mony.entity.pedido;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import br.com.solutis.acabou_o_mony.entity.transacao.Transacao;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,4 +18,7 @@ public class Pedido {
     private Double total;
     private Date data_criacao;
     private Date data_pagamento;
+
+    @ManyToOne
+    private Transacao transacao;
 }

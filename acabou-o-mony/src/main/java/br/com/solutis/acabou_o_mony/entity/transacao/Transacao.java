@@ -1,9 +1,7 @@
 package br.com.solutis.acabou_o_mony.entity.transacao;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import br.com.solutis.acabou_o_mony.entity.cartao.Cartao;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -20,4 +18,7 @@ public class Transacao {
     private String descricao;
     private String contexto;
     private String canal;
+
+    @ManyToOne
+    private Cartao cartao;
 }
