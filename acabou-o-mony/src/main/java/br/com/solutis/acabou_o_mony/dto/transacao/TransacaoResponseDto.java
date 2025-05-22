@@ -1,7 +1,7 @@
-package br.com.solutis.acabou_o_mony.entity.transacao;
+package br.com.solutis.acabou_o_mony.dto.transacao;
 
-import br.com.solutis.acabou_o_mony.entity.cartao.Cartao;
-import jakarta.persistence.*;
+import br.com.solutis.acabou_o_mony.entity.transacao.Status;
+import br.com.solutis.acabou_o_mony.entity.transacao.Tipo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,14 +9,11 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Entity
 @Getter
 @Setter
 @AllArgsConstructor
-public class Transacao {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class TransacaoResponseDto {
+
     private BigDecimal valor;
     private Tipo tipo;
     private Status status;
@@ -25,7 +22,5 @@ public class Transacao {
     private String contexto;
     private String canal;
 
-    @ManyToOne
-    @JoinColumn(name = "cartao_id")
-    private Cartao cartao;
+
 }
