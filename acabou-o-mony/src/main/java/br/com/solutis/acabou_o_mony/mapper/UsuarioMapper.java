@@ -2,6 +2,7 @@ package br.com.solutis.acabou_o_mony.mapper;
 
 import br.com.solutis.acabou_o_mony.dto.usuario.UsuarioRequestDto;
 import br.com.solutis.acabou_o_mony.dto.usuario.UsuarioResponseDto;
+import br.com.solutis.acabou_o_mony.dto.usuario.UsuarioResponseUpdateDto;
 import br.com.solutis.acabou_o_mony.entity.Usuario;
 
 import java.util.ArrayList;
@@ -38,5 +39,16 @@ public class UsuarioMapper {
         }
 
         return dtos;
+    }
+
+    public UsuarioResponseUpdateDto toUpdateDto(Usuario user){
+        UsuarioResponseUpdateDto dto = new UsuarioResponseUpdateDto();
+
+        dto.setNome(user.getNome());
+        dto.setTelefone(user.getTelefone());
+        dto.setTipo(user.getTipo());
+        dto.setAtivo(user.getAtivo());
+
+        return dto;
     }
 }

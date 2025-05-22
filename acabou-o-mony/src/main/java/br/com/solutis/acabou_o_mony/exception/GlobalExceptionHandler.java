@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
     @ExceptionHandler(EntidadeConflituosaException.class)
     public ResponseEntity<String> handleEntidadeConflituosa(EntidadeConflituosaException ex){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(EntitadeNaoEncontradaException.class)
+    public ResponseEntity<String> handleEntidadeNaoEncontrada(EntitadeNaoEncontradaException ex){
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 }

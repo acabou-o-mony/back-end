@@ -2,6 +2,7 @@ package br.com.solutis.acabou_o_mony.controller;
 
 import br.com.solutis.acabou_o_mony.dto.usuario.UsuarioRequestDto;
 import br.com.solutis.acabou_o_mony.dto.usuario.UsuarioResponseDto;
+import br.com.solutis.acabou_o_mony.dto.usuario.UsuarioResponseUpdateDto;
 import br.com.solutis.acabou_o_mony.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,20 @@ public class UsuarioController {
         }
 
         return ResponseEntity.status(200).body(dtos);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UsuarioResponseDto> listarPorId(@PathVariable Integer id){
+        return ResponseEntity.status(200).body(service.listarPorId(id));
+    }
+
+    // UPDATE
+    @PostMapping("/{id}")
+    public ResponseEntity<UsuarioResponseUpdateDto> atualizar(
+            @PathVariable Integer id,
+            @RequestBody UsuarioRequestDto dto
+    ) {
+        UsuarioResponseUpdateDto response = service.atualizar(id, dto);
+        return ResponseEntity.status(200).body(response);
     }
 }
