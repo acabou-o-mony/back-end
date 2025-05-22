@@ -1,5 +1,6 @@
 package br.com.solutis.acabou_o_mony.service;
 
+import br.com.solutis.acabou_o_mony.dto.usuario.UsuarioRequestDto;
 import br.com.solutis.acabou_o_mony.dto.usuario.UsuarioResponseDto;
 import br.com.solutis.acabou_o_mony.entity.Usuario;
 import br.com.solutis.acabou_o_mony.repository.UsuarioRepository;
@@ -30,12 +31,27 @@ class UsuarioServiceTest {
     @InjectMocks
     private UsuarioService service;
 
+    private Usuario usuario0;
+    private Usuario usuario1;
+    private Usuario usuario2;
+
+    private UsuarioRequestDto usuario0Request;
+    private UsuarioRequestDto usuari1Request;
+    private UsuarioRequestDto usuario2Request;
+
     @BeforeEach
     void setUp() {
+        usuario0 = new Usuario(
+                0,
+                "nome_c26dfc32352_3",
+                "email_2b9959f0e2f_b",
+                "senha_01c4b5f86cc8",
+                "telefone_ea384c3aeb37",
+                "tipo_e6c72ce89e4e",
+                true
+        );
 
-        
-
-        Usuario usuario1 = new Usuario(
+        usuario1 = new Usuario(
                 1,
                 "nome_c26dfc32352_4",
                 "email_2b9959f0e2f_c",
@@ -45,7 +61,7 @@ class UsuarioServiceTest {
                 true
         );
 
-        Usuario usuario2 = new Usuario(
+        usuario2 = new Usuario(
                 2,
                 "nome_c26dfc32352_5",
                 "email_2b9959f0e2f_d",
@@ -54,7 +70,6 @@ class UsuarioServiceTest {
                 "tipo_e6c72ce89e4e",
                 true
         );
-
     }
 
     @Test
@@ -63,9 +78,8 @@ class UsuarioServiceTest {
 
     @Test
     @DisplayName("Listagem de usuários quando existem usuários cadastrados e retornar a lista dos usuários")
-    void listarUsuariosComUsuariosCadastradosRetornarListaDosUsuarios() {
-        List<Usuario> usuarios = new ArrayList<>();
-
+    void listarUsuariosComUsuariosCadastradosRetornarListaDosUsuariosTest() {
+        List<Usuario> usuarios = List.of(usuario0, usuario1, usuario2);
 
         when(repository.findAll()).thenReturn(usuarios);
 
@@ -79,7 +93,7 @@ class UsuarioServiceTest {
 
     @Test
     @DisplayName("Listagem de usuários quando não existem usuários cadastrados e retornar lista vazia")
-    void listarUsuariosSemUsuariosRetornarListaVazia() {
+    void listarUsuariosSemUsuariosRetornarListaVaziaTest() {
         List<Usuario> usuarios = new ArrayList<>();
 
         when(repository.findAll()).thenReturn(usuarios);
@@ -90,7 +104,7 @@ class UsuarioServiceTest {
     }
 
     @Test
-    void listarUsuariosComErroDeBanco() {
+    void listarUsuariosComErroDeBancoTest() {
         when(repository.findAll()).thenThrow(new DataAccessException("Erro ao acessar o banco") {});
 
         assertThrows(DataAccessException.class, () -> service.listar());
