@@ -1,9 +1,6 @@
 package br.com.solutis.transacao_service.entity.transacao;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
+@Table(name = "transacao")
 public class Transacao {
 
     @Id
@@ -27,5 +25,8 @@ public class Transacao {
     private String descricao;
     private String contexto;
     private String canal;
+
+    @Column(name = "cartao_id")
+    private Integer cartaoId;
 
 }
