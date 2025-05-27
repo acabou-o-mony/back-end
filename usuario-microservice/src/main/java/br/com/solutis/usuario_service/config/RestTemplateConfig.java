@@ -1,4 +1,4 @@
-package br.com.solutis.usuario_microservice.config;
+package br.com.solutis.usuario_service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

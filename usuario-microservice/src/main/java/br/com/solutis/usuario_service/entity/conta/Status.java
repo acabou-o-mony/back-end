@@ -1,4 +1,4 @@
-package br.com.solutis.usuario_microservice.entity.conta;
+package br.com.solutis.usuario_service.entity.conta;
 
 public enum Status {
     ATIVO,

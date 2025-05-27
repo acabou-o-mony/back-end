@@ -1,7 +1,7 @@
-package br.com.solutis.usuario_microservice.entity.conta;
+package br.com.solutis.usuario_service.entity.conta;
 
-import br.com.solutis.usuario_microservice.entity.Usuario;
-import br.com.solutis.usuario_microservice.entity.cartao.Cartao;
+import br.com.solutis.usuario_service.entity.Usuario;
+import br.com.solutis.usuario_service.entity.cartao.Cartao;
 import jakarta.persistence.*;
 import lombok.Data;
 

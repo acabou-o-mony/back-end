@@ -1,4 +1,4 @@
-package br.com.solutis.usuario_microservice.entity;
+package br.com.solutis.usuario_service.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

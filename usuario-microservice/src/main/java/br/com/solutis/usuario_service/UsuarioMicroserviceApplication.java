@@ -1,4 +1,4 @@
-package br.com.solutis.usuario_microservice;
+package br.com.solutis.usuario_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
