@@ -18,10 +18,11 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="usuario-microservice" />
       </profile>
-      <profile name="Annotation profile for produto-service" enabled="true">
+      <profile name="Annotation profile for venda-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -29,6 +30,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="produto-service" />
+        <module name="venda-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -37,6 +39,7 @@
       <module name="acabou-o-mony" options="-parameters" />
       <module name="produto-service" options="-parameters" />
       <module name="usuario-microservice" options="-parameters" />
+      <module name="venda-service" options="-parameters" />
     </option>
   </component>
 </project>

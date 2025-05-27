@@ -28,7 +28,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.UsuarioMicroserviceApplication">
+  <component name="RunManager">
     <configuration name="ProdutoServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="produto-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.solutis.produto_service.ProdutoServiceApplication" />
