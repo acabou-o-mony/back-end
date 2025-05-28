@@ -53,6 +53,7 @@ class ProdutoControllerTest {
         requestDto = new ProdutoRequestDto(
                 "Garrafa de agua",
                 "Garrafa de agua de 50ml",
+                100.0,
                 100,
                 true,
                 LocalDate.of(2025, 5, 21)
@@ -61,7 +62,8 @@ class ProdutoControllerTest {
         requestDtoDuplicado = new ProdutoRequestDto(
                 requestDto.nome(),
                 "Garrafa de agua de 100ml",
-                10,
+                150.0,
+                30,
                 true,
                 LocalDate.of(2025, 5, 10)
         );
@@ -70,7 +72,8 @@ class ProdutoControllerTest {
         requestDtoInvalido = new ProdutoRequestDto(
                 "",
                 "Arroz Camil",
-                10,
+                109.0,
+                15,
                 true,
                 LocalDate.of(2025, 5, 11)
         );
@@ -79,7 +82,8 @@ class ProdutoControllerTest {
                 1L,
                 "Garrafa de agua",
                 "Garrafa de agua de 50ml",
-                100,
+                100.0,
+                60,
                 true,
                 LocalDate.of(2025, 5, 21)
         );
@@ -134,6 +138,7 @@ class ProdutoControllerTest {
                 .andExpect(jsonPath("$.length()").value(1))
                 .andExpect(jsonPath("$[0].nome").value(requestDto.nome()))
                 .andExpect(jsonPath("$[0].descricao").value(requestDto.descricao()))
+                .andExpect(jsonPath("$[0].precoUnitario").value(requestDto.precoUnitario()))
                 .andExpect(jsonPath("$[0].estoque").value(requestDto.estoque()))
                 .andExpect(jsonPath("[0].ativo").value(requestDto.ativo()))
                 .andExpect(jsonPath("$[0].dataCriacao").value(requestDto.dataCriacao().toString()));

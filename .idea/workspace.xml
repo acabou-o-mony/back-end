@@ -106,7 +106,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProdutoControllerTest">
+  <component name="RunManager" selected="Spring Boot.ProdutoServiceApplication">
     <configuration name="ProdutoControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="produto-service" />
       <extension name="coverage">
@@ -250,7 +250,7 @@
       <workItem from="1748350142374" duration="92000" />
       <workItem from="1748350250571" duration="50000" />
       <workItem from="1748440108614" duration="8492000" />
-      <workItem from="1748453371097" duration="2202000" />
+      <workItem from="1748453371097" duration="2504000" />
     </task>
     <servers />
   </component>
@@ -262,7 +262,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
-          <line>89</line>
+          <line>93</line>
           <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveCadastrarUmUsuarioComSucesso">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -271,7 +271,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
-          <line>112</line>
+          <line>116</line>
           <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveLancarErroConflitoAoCadastrarProdutoComNomeExistente">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
