@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -37,6 +38,13 @@ class ProdutoControllerTest {
     private ObjectMapper objectMapper;
 
     private ProdutoRequestDto requestDto;
+
+    //METODO PARA TESTAR O BAD REQUEST
+    private ProdutoRequestDto requestDtoInvalido;
+
+    //METODO PARA TESTE O CONFLICT
+    private ProdutoRequestDto requestDtoDuplicado;
+    
     private ProdutoResponseDto responseDto;
 
     @BeforeEach
@@ -48,6 +56,23 @@ class ProdutoControllerTest {
                 100,
                 true,
                 LocalDate.of(2025, 5, 21)
+        );
+
+        requestDtoDuplicado = new ProdutoRequestDto(
+                requestDto.nome(),
+                "Garrafa de agua de 100ml",
+                10,
+                true,
+                LocalDate.of(2025, 5, 10)
+        );
+
+
+        requestDtoInvalido = new ProdutoRequestDto(
+                "",
+                "Arroz Camil",
+                10,
+                true,
+                LocalDate.of(2025, 5, 11)
         );
 
         responseDto = new ProdutoResponseDto(
@@ -75,6 +100,28 @@ class ProdutoControllerTest {
     }
 
     @Test
+    @DisplayName("Deve lançar erro 400 quando dados inválidos forem enviados")
+    void deveRetornar400ParaDadosInvalidos() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.post("/produtos")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(requestDtoInvalido)))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @DisplayName("Deve lançar erro 409 ao tentar cadastrar produto com nome já existente")
+    void deveLancarErroConflitoAoCadastrarProdutoComNomeExistente() throws Exception {
+        Produto produto = ProdutoMapper.toEntity(requestDto);
+        produtoService.cadastrar(produto);
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/produtos")
+                        .contentType("application/json")
+                        .content(objectMapper.writeValueAsString(requestDtoDuplicado)))
+                .andExpect(status().isConflict());
+    }
+
+
+    @Test
     @DisplayName("Deve retornar uma lista de produtos cadastrados e deve retornar código 200")
     void deveListarProdutosCadastradosComSucesso() throws Exception {
         Produto produto = ProdutoMapper.toEntity(requestDto);
@@ -92,6 +139,11 @@ class ProdutoControllerTest {
                 .andExpect(jsonPath("$[0].dataCriacao").value(requestDto.dataCriacao().toString()));
     }
 
-
+    @Test
+    @DisplayName("Deve retornar 204 quando não houver produtos")
+    void deveRetornar204QuandoNaoHouverTarefas() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/produtos"))
+                .andExpect(status().isNoContent());
+    }
 
 }
