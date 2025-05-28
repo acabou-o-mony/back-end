@@ -44,7 +44,7 @@ class ProdutoControllerTest {
 
     //METODO PARA TESTE O CONFLICT
     private ProdutoRequestDto requestDtoDuplicado;
-    
+
     private ProdutoResponseDto responseDto;
 
     @BeforeEach

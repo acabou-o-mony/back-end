@@ -64,6 +64,7 @@
     "JUnit.ProdutoControllerTest.deveListarProdutosCadastradosComSucesso.executor": "Run",
     "JUnit.ProdutoControllerTest.deveRetornar204QuandoNaoHouverTarefas.executor": "Run",
     "JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidos.executor": "Run",
+    "JUnit.ProdutoControllerTest.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -249,7 +250,7 @@
       <workItem from="1748350142374" duration="92000" />
       <workItem from="1748350250571" duration="50000" />
       <workItem from="1748440108614" duration="8492000" />
-      <workItem from="1748453371097" duration="1593000" />
+      <workItem from="1748453371097" duration="2202000" />
     </task>
     <servers />
   </component>
@@ -261,7 +262,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
-          <line>88</line>
+          <line>89</line>
           <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveCadastrarUmUsuarioComSucesso">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -270,7 +271,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
-          <line>111</line>
+          <line>112</line>
           <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveLancarErroConflitoAoCadastrarProdutoComNomeExistente">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

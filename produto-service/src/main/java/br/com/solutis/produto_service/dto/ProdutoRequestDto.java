@@ -14,6 +14,9 @@ public record ProdutoRequestDto(
         String descricao,
         @NotNull
         @PositiveOrZero
+        Double precoUnitario,
+        @NotNull
+        @PositiveOrZero
         Integer estoque,
         @NotNull
         Boolean ativo,

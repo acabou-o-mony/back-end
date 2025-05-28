@@ -16,6 +16,7 @@ public class ProdutoMapper {
         Produto produto = new Produto();
         produto.setNome(requestDto.nome());
         produto.setDescricao(requestDto.descricao());
+        produto.setPrecoUnitario(requestDto.precoUnitario());
         produto.setEstoque(requestDto.estoque());
         produto.setAtivo(requestDto.ativo());
         produto.setDataCriacao(requestDto.dataCriacao());
@@ -33,6 +34,7 @@ public class ProdutoMapper {
                 produto.getId(),
                 produto.getNome(),
                 produto.getDescricao(),
+                produto.getPrecoUnitario(),
                 produto.getEstoque(),
                 produto.getAtivo(),
                 produto.getDataCriacao()
