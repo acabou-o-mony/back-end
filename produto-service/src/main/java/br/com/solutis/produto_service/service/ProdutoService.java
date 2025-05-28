@@ -29,6 +29,14 @@ public class ProdutoService {
         return repository.findAll();
     }
 
+    public List<Produto> listarAtivos() {
+        return repository.findByAtivoTrue();
+    }
+
+    public List<Produto> buscarPorNome(String nome) {
+        return repository.findByNomeContainingIgnoreCase(nome);
+    }
+
     public Produto buscarPorId(Long id){
         return repository.findById(id).
                 orElseThrow(() -> new EntidadeNaoEncontradaException("Produto de id %d não encontrada".formatted(id)));

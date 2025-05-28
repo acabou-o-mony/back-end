@@ -50,6 +50,33 @@ public class ProdutoController {
         return ResponseEntity.status(200).body(responseDto);
     }
 
+    @GetMapping("/ativos")
+    public ResponseEntity<List<ProdutoResponseDto>> listarAtivos() {
+        List<Produto> ativos = service.listarAtivos();
+        List<ProdutoResponseDto> dtos = ativos.stream().map(ProdutoMapper::toDto).toList();
+
+        if (dtos.isEmpty()){
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.status(200).body(dtos);
+    }
+
+    @GetMapping("/nomes/{nome}")
+    public ResponseEntity<List<ProdutoResponseDto>> buscarPorNome(@PathVariable String nome) {
+        List<Produto> produtos = service.buscarPorNome(nome);
+        List<ProdutoResponseDto> dtos = produtos.stream()
+                .map(ProdutoMapper::toDto)
+                .toList();
+
+        if (dtos.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.ok(dtos);
+    }
+
+
+
     @PutMapping("/{id}")
     public ResponseEntity<ProdutoResponseDto> atualizar(@PathVariable Long id, @Valid @RequestBody
     ProdutoUpdateDto produtoDto){
