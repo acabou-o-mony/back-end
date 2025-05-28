@@ -15,6 +15,14 @@ public class ProdutoClient {
 
     public ProdutoResponseDto buscarProdutoPorId(Long produtoId) {
         String url = "http://localhost:8081/produtos/" + produtoId;
-        return restTemplate.getForObject(url, ProdutoResponseDto.class);
+        ProdutoResponseDto produto = restTemplate.getForObject(url, ProdutoResponseDto.class);
+
+        if (produto == null) {
+            System.out.println("Produto não encontrado para o ID: " + produtoId);
+        } else {
+            System.out.println("Produto encontrado: " + produto);
+        }
+
+        return produto;
     }
 }
