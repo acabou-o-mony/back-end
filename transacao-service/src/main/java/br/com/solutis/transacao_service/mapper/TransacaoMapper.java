@@ -1,8 +1,8 @@
 package br.com.solutis.transacao_service.mapper;
 
-import br.com.solutis.transacao_service.dto.transacao.TransacaoResponseDto;
-import br.com.solutis.transacao_service.dto.transacao.TransacaoResumedResponseDto;
-import br.com.solutis.transacao_service.entity.transacao.Transacao;
+import br.com.solutis.transacao_service.dto.TransacaoResponseDto;
+import br.com.solutis.transacao_service.dto.TransacaoResumedResponseDto;
+import br.com.solutis.transacao_service.entity.Transacao;
 
 public class TransacaoMapper {
 

@@ -1,4 +1,4 @@
-package br.com.solutis.transacao_service.entity.transacao;
+package br.com.solutis.transacao_service.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ public class Transacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private BigDecimal valor;
     private Tipo tipo;
     private Status status;
@@ -27,6 +27,9 @@ public class Transacao {
     private String canal;
 
     @Column(name = "cartao_id")
-    private Integer cartaoId;
+    private Long cartaoId;
+
+    @Column(name = "pedido_id")
+    private Long pedidoId;
 
 }

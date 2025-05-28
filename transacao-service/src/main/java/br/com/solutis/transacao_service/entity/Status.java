@@ -1,4 +1,4 @@
-package br.com.solutis.transacao_service.entity.transacao;
+package br.com.solutis.transacao_service.entity;
 
 public enum Status {
     SUCESSO,

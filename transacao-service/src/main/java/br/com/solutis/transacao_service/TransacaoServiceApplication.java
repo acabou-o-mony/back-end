@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan(basePackages = {"br.com.solutis.transacao_service", "br.com.solutis.cartao_service"})
+@EntityScan(basePackages = {"br.com.solutis.transacao_service", "br.com.solutis.usuario_service", "br.com.solutis.venda_service"})
 public class TransacaoServiceApplication {
 
 	public static void main(String[] args) {
