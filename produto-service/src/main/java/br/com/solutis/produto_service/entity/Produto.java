@@ -22,6 +22,7 @@ public class Produto {
     private Long id;
     private String nome;
     private String descricao;
+    private Double precoUnitario;
     private Integer estoque;
     private Boolean ativo;
     private LocalDate dataCriacao;

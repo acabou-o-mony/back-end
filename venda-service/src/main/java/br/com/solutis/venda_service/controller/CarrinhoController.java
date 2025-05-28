@@ -25,6 +25,7 @@ public class CarrinhoController {
             carrinhoService.adicionarItemAoCarrinho(dto);
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }

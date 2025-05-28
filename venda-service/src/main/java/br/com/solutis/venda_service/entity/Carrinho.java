@@ -15,7 +15,6 @@ public class Carrinho {
     private Long idCarrinho;
 
     private Long produtoId;
-    private String nomeProduto;
     private Double precoUnitario;
 
     private Integer quantidade;
