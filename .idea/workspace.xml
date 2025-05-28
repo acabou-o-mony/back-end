@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2afe467-da9c-4094-9776-a4cf7f3041f2" name="Changes" comment="" />
+    <list default="true" id="d2afe467-da9c-4094-9776-a4cf7f3041f2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/TransacaoServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/controller/TransacaoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/dto/transacao/TransacaoResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/dto/transacao/TransacaoResumedResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/entity/transacao/Status.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/entity/transacao/Tipo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/entity/transacao/Transacao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/mapper/TransacaoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/repository/TransacaoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/service/TransacaoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/test/java/br/com/solutis/transacao_service/TransacaoServiceApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +51,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tales.ito/Documents/ElasticCode/Acabou o Mony/back-end",
+    "last_opened_file_path": "C:/Users/enzo.nascimento/Downloads/transacao-service",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }

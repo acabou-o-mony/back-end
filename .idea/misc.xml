@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/usuario-microservice/pom.xml" />
         <option value="$PROJECT_DIR$/produto-service/pom.xml" />
         <option value="$PROJECT_DIR$/venda-service/pom.xml" />
+        <option value="$PROJECT_DIR$/transacao-service/pom.xml" />
       </list>
     </option>
   </component>
