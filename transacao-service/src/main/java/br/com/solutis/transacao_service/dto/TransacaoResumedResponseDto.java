@@ -5,14 +5,13 @@ import br.com.solutis.transacao_service.entity.Tipo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
 public class TransacaoResumedResponseDto {
 
-    private BigDecimal valor;
+    private Double valor;
     private Tipo tipo;
     private Status status;
     private LocalDateTime dataHora;

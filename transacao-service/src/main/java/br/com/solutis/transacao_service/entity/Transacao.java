@@ -18,9 +18,14 @@ public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private BigDecimal valor;
+    private Double valor;
+
+    @Enumerated(EnumType.STRING)
     private Tipo tipo;
+
+    @Enumerated(EnumType.STRING)
     private Status status;
+
     private LocalDateTime dataHora;
     private String descricao;
     private String contexto;

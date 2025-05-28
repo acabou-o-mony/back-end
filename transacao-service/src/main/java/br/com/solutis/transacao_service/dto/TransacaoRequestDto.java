@@ -1,22 +1,21 @@
 package br.com.solutis.transacao_service.dto;
 
-import br.com.solutis.transacao_service.entity.Status;
 import br.com.solutis.transacao_service.entity.Tipo;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
 
 @Getter
-@AllArgsConstructor
-public class TransacaoResponseDto {
+@Setter
+public class TransacaoRequestDto {
 
     private Double valor;
     private Tipo tipo;
-    private Status status;
-    private LocalDateTime dataHora;
     private String descricao;
     private String contexto;
     private String canal;
+    private Long cartaoId;
+    private Long pedidoId;
 
 }
