@@ -5,6 +5,7 @@ import br.com.solutis.venda_service.dto.CarrinhoRequestDto;
 import br.com.solutis.venda_service.dto.CarrinhoResponseDto;
 import br.com.solutis.venda_service.dto.ProdutoResponseDto;
 import br.com.solutis.venda_service.entity.Carrinho;
+import br.com.solutis.venda_service.exception.ProductNotFoundException;
 import br.com.solutis.venda_service.repository.CarrinhoRepository;
 import br.com.solutis.venda_service.mapper.CarrinhoMapper;
 import org.springframework.stereotype.Service;
@@ -24,11 +25,17 @@ public class CarrinhoService {
     }
 
     public void adicionarItemAoCarrinho(CarrinhoRequestDto dto) {
+        if (dto.quantidade() <= 0) {
+            throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
+        }
+
         ProdutoResponseDto produto = produtoClient.buscarProdutoPorId(dto.produtoId());
 
-        Carrinho carrinho = CarrinhoMapper.toEntity(dto, produto.preco());
+        if (produto == null) {
+            throw new ProductNotFoundException("Produto não encontrado para o ID: " + dto.produtoId());
+        }
 
-        carrinho.setNomeProduto(produto.nome());
+        Carrinho carrinho = CarrinhoMapper.toEntity(dto, produto.preco());
 
         carrinhoRepository.save(carrinho);
     }

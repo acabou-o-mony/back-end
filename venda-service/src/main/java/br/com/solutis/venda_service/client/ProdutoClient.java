@@ -14,7 +14,7 @@ public class ProdutoClient {
     }
 
     public ProdutoResponseDto buscarProdutoPorId(Long produtoId) {
-        String url = "http://localhost:8082/produtos/" + produtoId;
+        String url = "http://localhost:8081/produtos/" + produtoId;
         return restTemplate.getForObject(url, ProdutoResponseDto.class);
     }
 }
