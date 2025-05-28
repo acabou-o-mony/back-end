@@ -83,15 +83,15 @@ class ProdutoControllerTest {
                 "Garrafa de agua",
                 "Garrafa de agua de 50ml",
                 100.0,
-                60,
+                100,
                 true,
                 LocalDate.of(2025, 5, 21)
         );
     }
 
     @Test
-    @DisplayName("Deve cadastrar um usuário com sucesso e deve retornar 200")
-    void deveCadastrarUmUsuarioComSucesso() throws Exception {
+    @DisplayName("Deve cadastrar um produto com sucesso e deve retornar 200")
+    void deveCadastrarUmProdutoComSucesso() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/produtos")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(requestDto)))
@@ -136,19 +136,46 @@ class ProdutoControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$").isArray())
                 .andExpect(jsonPath("$.length()").value(1))
-                .andExpect(jsonPath("$[0].nome").value(requestDto.nome()))
-                .andExpect(jsonPath("$[0].descricao").value(requestDto.descricao()))
-                .andExpect(jsonPath("$[0].precoUnitario").value(requestDto.precoUnitario()))
-                .andExpect(jsonPath("$[0].estoque").value(requestDto.estoque()))
-                .andExpect(jsonPath("[0].ativo").value(requestDto.ativo()))
-                .andExpect(jsonPath("$[0].dataCriacao").value(requestDto.dataCriacao().toString()));
+                .andExpect(jsonPath("$[0].nome").value(responseDto.nome()))
+                .andExpect(jsonPath("$[0].descricao").value(responseDto.descricao()))
+                .andExpect(jsonPath("$[0].precoUnitario").value(responseDto.precoUnitario()))
+                .andExpect(jsonPath("$[0].estoque").value(responseDto.estoque()))
+                .andExpect(jsonPath("[0].ativo").value(responseDto.ativo()))
+                .andExpect(jsonPath("$[0].dataCriacao").value(responseDto.dataCriacao().toString()));
     }
 
     @Test
     @DisplayName("Deve retornar 204 quando não houver produtos")
-    void deveRetornar204QuandoNaoHouverTarefas() throws Exception {
+    void deveRetornar204QuandoNaoHouverProdutos() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/produtos"))
                 .andExpect(status().isNoContent());
     }
 
+    @Test
+    @DisplayName("Deve retornar 200 e os dados do produto com o ID fornecido")
+    void deveBuscarProdutoPorIdComSucesso() throws Exception {
+        Produto produto = ProdutoMapper.toEntity(requestDto);
+        Produto produtoSalvo = produtoService.cadastrar(produto);
+
+        ProdutoResponseDto produtoDto = ProdutoMapper.toDto(produtoSalvo);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/produtos/{id}", produtoDto.id()))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(produtoDto.id()))
+                .andExpect(jsonPath("$.nome").value(produtoDto.nome()))
+                .andExpect(jsonPath("$.descricao").value(produtoDto.descricao()))
+                .andExpect(jsonPath("$.precoUnitario").value(produtoDto.precoUnitario()))
+                .andExpect(jsonPath("$.estoque").value(produtoDto.estoque()))
+                .andExpect(jsonPath("$.ativo").value(produtoDto.ativo()))
+                .andExpect(jsonPath("$.dataCriacao").value(produtoDto.dataCriacao().toString()));
+    }
+
+    @Test
+    @DisplayName("Deve retornar 404 quando não encontrar um produto com o ID fornecido")
+    void deveRetornar404QuandoNaoEncontrarProdutoPorId() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/produtos/{id}", 8L))
+                .andExpect(status().isNotFound());
+    }
+
+    
 }

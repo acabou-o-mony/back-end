@@ -59,11 +59,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ProdutoControllerTest.deveBuscarProdutoPorIdComSucesso.executor": "Run",
     "JUnit.ProdutoControllerTest.deveCadastrarUmUsuarioComSucesso.executor": "Run",
     "JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente.executor": "Run",
     "JUnit.ProdutoControllerTest.deveListarProdutosCadastradosComSucesso.executor": "Run",
     "JUnit.ProdutoControllerTest.deveRetornar204QuandoNaoHouverTarefas.executor": "Run",
     "JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidos.executor": "Run",
+    "JUnit.ProdutoControllerTest.deveRetornar404QuandoNaoEncontrarProdutoPorId.executor": "Run",
     "JUnit.ProdutoControllerTest.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -106,7 +108,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProdutoServiceApplication">
+  <component name="RunManager" selected="JUnit.ProdutoControllerTest.deveRetornar404QuandoNaoEncontrarProdutoPorId">
     <configuration name="ProdutoControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="produto-service" />
       <extension name="coverage">
@@ -118,6 +120,22 @@
       <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProdutoControllerTest.deveBuscarProdutoPorIdComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="produto-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
+      <option name="METHOD_NAME" value="deveBuscarProdutoPorIdComSucesso" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,38 +156,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProdutoControllerTest.deveListarProdutosCadastradosComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="produto-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveListarProdutosCadastradosComSucesso" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProdutoControllerTest.deveRetornar204QuandoNaoHouverTarefas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="produto-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveRetornar204QuandoNaoHouverTarefas" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProdutoControllerTest.deveRetornar400ParaDadosInvalidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="produto-service" />
       <extension name="coverage">
@@ -181,6 +167,22 @@
       <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
       <option name="METHOD_NAME" value="deveRetornar400ParaDadosInvalidos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProdutoControllerTest.deveRetornar404QuandoNaoEncontrarProdutoPorId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="produto-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
+      <option name="METHOD_NAME" value="deveRetornar404QuandoNaoEncontrarProdutoPorId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,6 +216,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UsuarioServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="usuario-microservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.solutis.usuario_service.UsuarioServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VendaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="venda-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.solutis.venda_service.VendaServiceApplication" />
@@ -223,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar404QuandoNaoEncontrarProdutoPorId" />
+        <item itemvalue="JUnit.ProdutoControllerTest.deveBuscarProdutoPorIdComSucesso" />
         <item itemvalue="JUnit.ProdutoControllerTest" />
         <item itemvalue="JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" />
         <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidos" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar204QuandoNaoHouverTarefas" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveListarProdutosCadastradosComSucesso" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +259,8 @@
       <workItem from="1748350142374" duration="92000" />
       <workItem from="1748350250571" duration="50000" />
       <workItem from="1748440108614" duration="8492000" />
-      <workItem from="1748453371097" duration="2504000" />
+      <workItem from="1748453371097" duration="2872000" />
+      <workItem from="1748456301870" duration="1627000" />
     </task>
     <servers />
   </component>
