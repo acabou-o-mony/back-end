@@ -1,9 +1,9 @@
-package mapper;
+package br.com.solutis.produto_service.mapper;
 
-import dto.ProdutoRequestDto;
-import dto.ProdutoResponseDto;
-import dto.ProdutoUpdateDto;
-import entity.Produto;
+import br.com.solutis.produto_service.dto.ProdutoRequestDto;
+import br.com.solutis.produto_service.dto.ProdutoResponseDto;
+import br.com.solutis.produto_service.dto.ProdutoUpdateDto;
+import br.com.solutis.produto_service.entity.Produto;
 
 public class ProdutoMapper {
 

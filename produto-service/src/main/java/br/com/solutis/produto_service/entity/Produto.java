@@ -1,4 +1,4 @@
-package entity;
+package br.com.solutis.produto_service.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

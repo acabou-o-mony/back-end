@@ -1,4 +1,4 @@
-package dto;
+package br.com.solutis.produto_service.dto;
 
 import java.time.LocalDate;
 

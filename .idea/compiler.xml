@@ -2,16 +2,18 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Annotation profile for venda-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
+        <processorPath>
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="produto-service" />
-        <module name="acabou-o-mony" />
         <module name="venda-service" />
+        <module name="transacao-service" />
+        <module name="acabou-o-mony" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +24,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="acabou-o-mony" options="-parameters" />
       <module name="produto-service" options="-parameters" />
+      <module name="transacao-service" options="-parameters" />
       <module name="usuario-microservice" options="-parameters" />
       <module name="venda-service" options="-parameters" />
     </option>

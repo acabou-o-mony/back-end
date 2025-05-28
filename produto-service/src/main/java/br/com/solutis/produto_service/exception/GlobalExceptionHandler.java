@@ -1,4 +1,4 @@
-package exception;
+package br.com.solutis.produto_service.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

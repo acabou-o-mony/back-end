@@ -1,11 +1,11 @@
-package service;
+package br.com.solutis.produto_service.service;
 
-import entity.Produto;
-import exception.EntidadeConflitoException;
-import exception.EntidadeNaoEncontradaException;
+import br.com.solutis.produto_service.entity.Produto;
+import br.com.solutis.produto_service.exception.EntidadeConflitoException;
+import br.com.solutis.produto_service.exception.EntidadeNaoEncontradaException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import repository.ProdutoRepository;
+import br.com.solutis.produto_service.repository.ProdutoRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,11 +18,13 @@ public class ProdutoService {
 
     public Produto cadastrar(Produto produto){
 
+        /*
         Optional<Produto> optionalProduto = repository.findById(produto.getId());
 
         if (optionalProduto.isPresent()){
             throw new EntidadeConflitoException("Produto de id %d já cadastrado".formatted(produto.getId()));
         }
+         */
 
         return repository.save(produto);
     }
@@ -36,12 +38,16 @@ public class ProdutoService {
                 orElseThrow(() -> new EntidadeNaoEncontradaException("Produto de id %d não encontrada".formatted(id)));
     }
 
-    public Produto atualizar(Produto produto){
-        if (repository.existsById(produto.getId())){
-            return repository.save(produto);
-        } else {
-            throw new EntidadeNaoEncontradaException("Produto de id %d não encontrada".formatted(produto.getId()));
-        }
+    public Produto atualizar(Produto produtoComAtualizacoes) {
+        Produto produtoExistente = repository.findById(produtoComAtualizacoes.getId())
+                .orElseThrow(() -> new EntidadeNaoEncontradaException(
+                        "Produto de id %d não encontrada".formatted(produtoComAtualizacoes.getId())
+                ));
+        
+        produtoExistente.setEstoque(produtoComAtualizacoes.getEstoque());
+        produtoExistente.setAtivo(produtoComAtualizacoes.getAtivo());
+
+        return repository.save(produtoExistente);
     }
 
     public void deletar(Long id){

@@ -1,4 +1,4 @@
-package dto;
+package br.com.solutis.produto_service.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

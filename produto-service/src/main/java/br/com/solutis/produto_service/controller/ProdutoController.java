@@ -1,15 +1,15 @@
-package controller;
+package br.com.solutis.produto_service.controller;
 
-import dto.ProdutoRequestDto;
-import dto.ProdutoResponseDto;
-import dto.ProdutoUpdateDto;
-import entity.Produto;
+import br.com.solutis.produto_service.dto.ProdutoRequestDto;
+import br.com.solutis.produto_service.dto.ProdutoResponseDto;
+import br.com.solutis.produto_service.dto.ProdutoUpdateDto;
+import br.com.solutis.produto_service.entity.Produto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import mapper.ProdutoMapper;
+import br.com.solutis.produto_service.mapper.ProdutoMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.ProdutoService;
+import br.com.solutis.produto_service.service.ProdutoService;
 
 import java.util.List;
 
