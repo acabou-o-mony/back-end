@@ -37,16 +37,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -58,6 +59,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ProdutoControllerTest.deveCadastrarUmUsuarioComSucesso.executor": "Run",
+    "JUnit.ProdutoControllerTest.deveListarProdutosCadastradosComSucesso.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -65,6 +68,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.ProdutoServiceApplication.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/matheus.makiyama/Desktop/MatheusYukio/AcabouOMony/back-end",
@@ -74,10 +79,19 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="br.com.solutis.produto_service.controller" />
+      <recent name="br.com.solutis.produto_service.service" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -88,7 +102,39 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProdutoServiceApplication">
+  <component name="RunManager" selected="JUnit.ProdutoControllerTest.deveListarProdutosCadastradosComSucesso">
+    <configuration name="ProdutoControllerTest.deveCadastrarUmUsuarioComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="produto-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
+      <option name="METHOD_NAME" value="deveCadastrarUmUsuarioComSucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProdutoControllerTest.deveListarProdutosCadastradosComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="produto-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
+      <option name="METHOD_NAME" value="deveListarProdutosCadastradosComSucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AcabouOMonyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="acabou-o-mony" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.solutis.acabou_o_mony.AcabouOMonyApplication" />
@@ -124,6 +170,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ProdutoControllerTest.deveListarProdutosCadastradosComSucesso" />
+        <item itemvalue="JUnit.ProdutoControllerTest.deveCadastrarUmUsuarioComSucesso" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -143,11 +195,32 @@
       <updated>1748350139751</updated>
       <workItem from="1748350142374" duration="92000" />
       <workItem from="1748350250571" duration="50000" />
-      <workItem from="1748440108614" duration="4339000" />
+      <workItem from="1748440108614" duration="8492000" />
+      <workItem from="1748453371097" duration="441000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
+          <line>64</line>
+          <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveCadastrarUmUsuarioComSucesso">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

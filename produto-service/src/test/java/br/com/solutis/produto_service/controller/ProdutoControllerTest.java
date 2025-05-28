@@ -1,7 +1,97 @@
 package br.com.solutis.produto_service.controller;
 
-import static org.junit.jupiter.api.Assertions.*;
+import br.com.solutis.produto_service.dto.ProdutoRequestDto;
+import br.com.solutis.produto_service.dto.ProdutoResponseDto;
+import br.com.solutis.produto_service.entity.Produto;
+import br.com.solutis.produto_service.mapper.ProdutoMapper;
+import br.com.solutis.produto_service.service.ProdutoService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@Transactional
 class ProdutoControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
+    private ProdutoService produtoService;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    private ProdutoRequestDto requestDto;
+    private ProdutoResponseDto responseDto;
+
+    @BeforeEach
+    void setUp() {
+
+        requestDto = new ProdutoRequestDto(
+                "Garrafa de agua",
+                "Garrafa de agua de 50ml",
+                100,
+                true,
+                LocalDate.of(2025, 5, 21)
+        );
+
+        responseDto = new ProdutoResponseDto(
+                1L,
+                "Garrafa de agua",
+                "Garrafa de agua de 50ml",
+                100,
+                true,
+                LocalDate.of(2025, 5, 21)
+        );
+    }
+
+    @Test
+    @DisplayName("Deve cadastrar um usuário com sucesso e deve retornar 200")
+    void deveCadastrarUmUsuarioComSucesso() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.post("/produtos")
+                        .contentType("application/json")
+                        .content(objectMapper.writeValueAsString(requestDto)))
+                .andExpect(status().isCreated())
+                .andExpect(result -> {
+                    String response = result.getResponse().getContentAsString();
+                    assertTrue(response.contains("\"nome\":\"Garrafa de agua\""));
+                });
+
+    }
+
+    @Test
+    @DisplayName("Deve retornar uma lista de produtos cadastrados e deve retornar código 200")
+    void deveListarProdutosCadastradosComSucesso() throws Exception {
+        Produto produto = ProdutoMapper.toEntity(requestDto);
+        produtoService.cadastrar(produto);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/produtos")
+                        .contentType("application/json"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].nome").value(requestDto.nome()))
+                .andExpect(jsonPath("$[0].descricao").value(requestDto.descricao()))
+                .andExpect(jsonPath("$[0].estoque").value(requestDto.estoque()))
+                .andExpect(jsonPath("[0].ativo").value(requestDto.ativo()))
+                .andExpect(jsonPath("$[0].dataCriacao").value(requestDto.dataCriacao().toString()));
+    }
+
+
 
 }
