@@ -18,13 +18,9 @@ public class ProdutoService {
 
     public Produto cadastrar(Produto produto){
 
-        /*
-        Optional<Produto> optionalProduto = repository.findById(produto.getId());
-
-        if (optionalProduto.isPresent()){
-            throw new EntidadeConflitoException("Produto de id %d já cadastrado".formatted(produto.getId()));
+        if (repository.existsByNome(produto.getNome())) {
+            throw new EntidadeConflitoException("Produto com nome '%s' já cadastrado".formatted(produto.getNome()));
         }
-         */
 
         return repository.save(produto);
     }
@@ -43,7 +39,7 @@ public class ProdutoService {
                 .orElseThrow(() -> new EntidadeNaoEncontradaException(
                         "Produto de id %d não encontrada".formatted(produtoComAtualizacoes.getId())
                 ));
-        
+
         produtoExistente.setEstoque(produtoComAtualizacoes.getEstoque());
         produtoExistente.setAtivo(produtoComAtualizacoes.getAtivo());
 
