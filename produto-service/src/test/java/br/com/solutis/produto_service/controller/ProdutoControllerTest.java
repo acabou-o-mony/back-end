@@ -166,7 +166,6 @@ class ProdutoControllerTest {
     void deveBuscarProdutoPorIdComSucesso() throws Exception {
         Produto produto = ProdutoMapper.toEntity(requestDto);
         Produto produtoSalvo = produtoService.cadastrar(produto);
-
         ProdutoResponseDto produtoDto = ProdutoMapper.toDto(produtoSalvo);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/produtos/{id}", produtoDto.id()))
@@ -185,6 +184,74 @@ class ProdutoControllerTest {
     void deveRetornar404QuandoNaoEncontrarProdutoPorId() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/produtos/{id}", 8L))
                 .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @DisplayName("Deve retornar apenas produtos ativos com todos os campos e status 200")
+    void deveRetornarProdutosAtivosComTodosOsCampos() throws Exception {
+        Produto produto = ProdutoMapper.toEntity(requestDto);
+        Produto produtoSalvo = produtoService.cadastrar(produto);
+        ProdutoResponseDto produtoDto = ProdutoMapper.toDto(produtoSalvo);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/produtos/ativos"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].id").value(produtoDto.id()))
+                .andExpect(jsonPath("$[0].nome").value(produtoDto.nome()))
+                .andExpect(jsonPath("$[0].descricao").value(produtoDto.descricao()))
+                .andExpect(jsonPath("$[0].precoUnitario").value(produtoDto.precoUnitario()))
+                .andExpect(jsonPath("$[0].estoque").value(produtoDto.estoque()))
+                .andExpect(jsonPath("$[0].ativo").value(produtoDto.ativo()))
+                .andExpect(jsonPath("$[0].dataCriacao").value(produtoDto.dataCriacao().toString()));
+    }
+
+    @Test
+    @DisplayName("Deve retornar 204 quando não houver produtos ativos")
+    void deveRetornar204SemProdutosAtivos() throws Exception {
+        Produto produtoInativo = ProdutoMapper.toEntity(requestDto);
+
+        produtoInativo.setAtivo(false);
+        produtoInativo.setNome("Produto Inativo");
+
+        produtoService.cadastrar(produtoInativo);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/produtos/ativos"))
+                .andExpect(status().isNoContent());
+    }
+
+    @Test
+    @DisplayName("Deve retornar produtos com nome correspondente (ignorar case) e todos os campos")
+    void deveBuscarProdutoPorNomeComTodosOsCampos() throws Exception {
+        Produto produto = ProdutoMapper.toEntity(requestDto);
+        Produto produtoSalvo = produtoService.cadastrar(produto);
+
+        ProdutoResponseDto produtoDto = ProdutoMapper.toDto(produtoSalvo);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/produtos/nomes/{nome}", "garrafa"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$.length()").value(1))
+                .andExpect(jsonPath("$[0].id").value(produtoDto.id()))
+                .andExpect(jsonPath("$[0].nome").value(produtoDto.nome()))
+                .andExpect(jsonPath("$[0].descricao").value(produtoDto.descricao()))
+                .andExpect(jsonPath("$[0].precoUnitario").value(produtoDto.precoUnitario()))
+                .andExpect(jsonPath("$[0].estoque").value(produtoDto.estoque()))
+                .andExpect(jsonPath("$[0].ativo").value(produtoDto.ativo()))
+                .andExpect(jsonPath("$[0].dataCriacao").value(produtoDto.dataCriacao().toString()));
+    }
+
+    @Test
+    @DisplayName("Deve retornar 204 quando não houver produtos com o nome passado")
+    void deveRetornar204SemProdutosComNomeEspecifico() throws Exception {
+        Produto produtoNome = ProdutoMapper.toEntity(requestDto);
+
+        produtoNome.setNome("Not Found");
+
+        produtoService.cadastrar(produtoNome);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/produtos/nomes/{nome}", "garrafa"))
+                .andExpect(status().isNoContent());
     }
 
     @Test
@@ -242,5 +309,5 @@ class ProdutoControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.delete("/produtos/{id}", idInexistente))
                 .andExpect(status().isNotFound());
     }
-    
+
 }
