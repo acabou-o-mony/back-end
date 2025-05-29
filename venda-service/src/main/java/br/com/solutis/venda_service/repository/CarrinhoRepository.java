@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface CarrinhoRepository extends JpaRepository<Carrinho, Integer> {
 
-    List<Carrinho> findByIdConta(Long idConta);
+    List<Carrinho> findByCarrinhoId_IdCarrinho(Long idCarrinho);
 
-    List<Carrinho> findAllById(Long idCarrinho);
+    List<Carrinho> findByCarrinhoId_IdCarrinhoAndCarrinhoId_IdProduto(Long idCarrinho, Long idProduto);
 }

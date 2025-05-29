@@ -23,6 +23,7 @@ public class CarrinhoController {
     public ResponseEntity<Void> adicionarAoCarrinho(@RequestBody CarrinhoRequestDto dto) {
         try {
             carrinhoService.adicionarItemAoCarrinho(dto);
+
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,5 +40,32 @@ public class CarrinhoController {
         }
 
         return ResponseEntity.ok(carrinho);
+    }
+
+    @PutMapping("/{idCarrinho}/produtos/{idProduto}")
+    public ResponseEntity<Void> atualizarQuantidade(
+            @PathVariable Long idCarrinho,
+            @PathVariable Long idProduto,
+            @RequestBody CarrinhoRequestDto dto) {
+        try {
+            carrinhoService.atualizarQuantidade(idCarrinho, idProduto, dto.quantidade());
+            return ResponseEntity.status(HttpStatus.OK).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+    }
+
+    @DeleteMapping("/{idCarrinho}/produtos/{idProduto}")
+    public ResponseEntity<Void> deletarProduto(
+            @PathVariable Long idCarrinho,
+            @PathVariable Long idProduto) {
+        try {
+            carrinhoService.deletarProduto(idCarrinho, idProduto);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();  // Status 204
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
     }
 }

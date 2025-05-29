@@ -5,6 +5,7 @@ import br.com.solutis.venda_service.dto.CarrinhoRequestDto;
 import br.com.solutis.venda_service.dto.CarrinhoResponseDto;
 import br.com.solutis.venda_service.dto.ProdutoResponseDto;
 import br.com.solutis.venda_service.entity.Carrinho;
+import br.com.solutis.venda_service.entity.Pedido;
 import br.com.solutis.venda_service.exception.ProductNotFoundException;
 import br.com.solutis.venda_service.repository.CarrinhoRepository;
 import br.com.solutis.venda_service.mapper.CarrinhoMapper;
@@ -40,19 +41,19 @@ public class CarrinhoService {
             throw new IllegalArgumentException("O preço do produto não foi atribuído corretamente.");
         }
 
-        // Salva o item no banco de dados
         carrinhoRepository.save(carrinho);
     }
 
     public List<CarrinhoResponseDto> listarCarrinho(Long idCarrinho) {
-        List<Carrinho> carrinho = carrinhoRepository.findAllById(idCarrinho);
+
+        List<Carrinho> carrinho = carrinhoRepository.findByCarrinhoId_IdCarrinho(idCarrinho);
 
         return carrinho.stream()
                 .map(item -> {
-                    ProdutoResponseDto produto = produtoClient.buscarProdutoPorId(item.getProdutoId());
+                    ProdutoResponseDto produto = produtoClient.buscarProdutoPorId(item.getCarrinhoId().getIdProduto());  // Busca o produto pelo idProduto
                     return new CarrinhoResponseDto(
-                            item.getId(),
-                            item.getProdutoId(),
+                            item.getCarrinhoId().getIdCarrinho(),
+                            item.getCarrinhoId().getIdProduto(),
                             produto.nome(),
                             item.getQuantidade(),
                             item.getPrecoUnitario(),
@@ -60,5 +61,28 @@ public class CarrinhoService {
                     );
                 })
                 .collect(Collectors.toList());
+    }
+
+    public void atualizarQuantidade(Long idCarrinho, Long idProduto, Integer novaQuantidade) {
+        if (novaQuantidade <= 0) {
+            throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
+        }
+
+        Carrinho carrinho = carrinhoRepository.findByCarrinhoId_IdCarrinhoAndCarrinhoId_IdProduto(idCarrinho, idProduto)
+                .stream()
+                .findFirst()
+                .orElseThrow(() -> new ProductNotFoundException("Produto não encontrado no carrinho"));
+
+        carrinho.setQuantidade(novaQuantidade);
+        carrinhoRepository.save(carrinho);
+    }
+
+    public void deletarProduto(Long idCarrinho, Long idProduto) {
+        Carrinho carrinho = carrinhoRepository.findByCarrinhoId_IdCarrinhoAndCarrinhoId_IdProduto(idCarrinho, idProduto)
+                .stream()
+                .findFirst()
+                .orElseThrow(() -> new ProductNotFoundException("Produto não encontrado no carrinho"));
+
+        carrinhoRepository.delete(carrinho);
     }
 }
