@@ -10,5 +10,6 @@ import java.util.List;
 public interface TransacaoRepository extends JpaRepository<Transacao, Long> {
 
     List<Transacao> findAllByCartaoId(Long id);
+    List<Transacao> findAllByCartaoIdAndStatusEqualsPendente(Long id);
 
 }
