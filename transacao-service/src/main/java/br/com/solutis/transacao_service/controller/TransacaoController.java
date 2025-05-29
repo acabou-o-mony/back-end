@@ -49,4 +49,11 @@ public class TransacaoController {
 
         return (lista.isEmpty()) ? ResponseEntity.status(204).build() : ResponseEntity.status(200).body(lista.stream().map(mapper::toResumedResponse).toList());
     }
+
+    @GetMapping("/{id}/falhas")
+    public ResponseEntity<List<TransacaoResumedResponseDto>> listarFalhasPorId(@PathVariable Long id) {
+        List<Transacao> lista = service.listarPendentesPorId(id);
+
+        return (lista.isEmpty()) ? ResponseEntity.status(204).build() : ResponseEntity.status(200).body(lista.stream().map(mapper::toResumedResponse).toList());
+    }
 }
