@@ -63,4 +63,26 @@ public class CarrinhoService {
                 .collect(Collectors.toList());
     }
 
+    public void atualizarQuantidade(Long idCarrinho, Long idProduto, Integer novaQuantidade) {
+        if (novaQuantidade <= 0) {
+            throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
+        }
+
+        Carrinho carrinho = carrinhoRepository.findByCarrinhoId_IdCarrinhoAndCarrinhoId_IdProduto(idCarrinho, idProduto)
+                .stream()
+                .findFirst()
+                .orElseThrow(() -> new ProductNotFoundException("Produto não encontrado no carrinho"));
+
+        carrinho.setQuantidade(novaQuantidade);
+        carrinhoRepository.save(carrinho);
+    }
+
+    public void deletarProduto(Long idCarrinho, Long idProduto) {
+        Carrinho carrinho = carrinhoRepository.findByCarrinhoId_IdCarrinhoAndCarrinhoId_IdProduto(idCarrinho, idProduto)
+                .stream()
+                .findFirst()
+                .orElseThrow(() -> new ProductNotFoundException("Produto não encontrado no carrinho"));
+
+        carrinhoRepository.delete(carrinho);
+    }
 }

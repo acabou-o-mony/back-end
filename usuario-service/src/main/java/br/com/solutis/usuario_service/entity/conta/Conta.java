@@ -20,9 +20,11 @@ public class Conta {
     private Status status;
     private Date data_criacao;
 
-    @OneToOne
+    // Toda interação que o JPA fizer com conta ira alterar diretamente cartão (cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "cartao_id")
     private Cartao cartao;
+
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")

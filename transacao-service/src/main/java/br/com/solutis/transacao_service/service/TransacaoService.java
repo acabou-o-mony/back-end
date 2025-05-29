@@ -51,4 +51,8 @@ public class TransacaoService {
             return null;
         }
     }
+
+    public List<Transacao> listarPendentesPorId(Long id) {
+        return repository.findAllByCartaoIdAndStatusEquals(id, Status.PENDENTE);
+    }
 }
