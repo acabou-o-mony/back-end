@@ -23,6 +23,7 @@ public class CarrinhoController {
     public ResponseEntity<Void> adicionarAoCarrinho(@RequestBody CarrinhoRequestDto dto) {
         try {
             carrinhoService.adicionarItemAoCarrinho(dto);
+
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (Exception e) {
             e.printStackTrace();

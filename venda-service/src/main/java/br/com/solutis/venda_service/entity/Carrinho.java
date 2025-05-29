@@ -4,22 +4,16 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Setter
 @Getter
 @Entity
 public class Carrinho {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    private Long produtoId;
+    @EmbeddedId
+    private CarrinhoId carrinhoId;
+
     private Double precoUnitario;
-
     private Integer quantidade;
-
-    private Long idConta;
 
     @ManyToOne
     @JoinColumn(name = "pedido_idpedido")

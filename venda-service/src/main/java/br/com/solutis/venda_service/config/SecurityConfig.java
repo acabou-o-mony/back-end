@@ -1,4 +1,4 @@
-package br.com.solutis.venda_service.client;
+package br.com.solutis.venda_service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
