@@ -11,4 +11,5 @@ public interface CarrinhoRepository extends JpaRepository<Carrinho, Integer> {
 
     List<Carrinho> findByIdConta(Long idConta);
 
+    List<Carrinho> findAllById(Long idCarrinho);
 }

@@ -12,7 +12,7 @@ import java.util.List;
 public class Carrinho {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCarrinho;
+    private Long id;
 
     private Long produtoId;
     private Double precoUnitario;

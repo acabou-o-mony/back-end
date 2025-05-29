@@ -223,4 +223,6 @@ class ProdutoControllerTest {
                         .content(objectMapper.writeValueAsString(updateDtoInvalido)))
                 .andExpect(status().isBadRequest());
     }
+
+
 }

@@ -30,24 +30,28 @@ public class CarrinhoService {
         }
 
         ProdutoResponseDto produto = produtoClient.buscarProdutoPorId(dto.produtoId());
-
         if (produto == null) {
             throw new ProductNotFoundException("Produto não encontrado para o ID: " + dto.produtoId());
         }
 
-        Carrinho carrinho = CarrinhoMapper.toEntity(dto, produto.preco());
+        Carrinho carrinho = CarrinhoMapper.toEntity(dto, produto.precoUnitario());
 
+        if (carrinho.getPrecoUnitario() == null) {
+            throw new IllegalArgumentException("O preço do produto não foi atribuído corretamente.");
+        }
+
+        // Salva o item no banco de dados
         carrinhoRepository.save(carrinho);
     }
 
-    public List<CarrinhoResponseDto> listarCarrinho(Long idConta) {
-        List<Carrinho> carrinho = carrinhoRepository.findByIdConta(idConta);
+    public List<CarrinhoResponseDto> listarCarrinho(Long idCarrinho) {
+        List<Carrinho> carrinho = carrinhoRepository.findAllById(idCarrinho);
 
         return carrinho.stream()
                 .map(item -> {
                     ProdutoResponseDto produto = produtoClient.buscarProdutoPorId(item.getProdutoId());
                     return new CarrinhoResponseDto(
-                            item.getIdCarrinho(),
+                            item.getId(),
                             item.getProdutoId(),
                             produto.nome(),
                             item.getQuantidade(),
