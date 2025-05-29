@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/carrinho")
+@RequestMapping("/carrinhos")
 public class CarrinhoController {
 
     private final CarrinhoService carrinhoService;
@@ -19,7 +19,7 @@ public class CarrinhoController {
         this.carrinhoService = carrinhoService;
     }
 
-    @PostMapping("/adicionar")
+    @PostMapping
     public ResponseEntity<Void> adicionarAoCarrinho(@RequestBody CarrinhoRequestDto dto) {
         try {
             carrinhoService.adicionarItemAoCarrinho(dto);
