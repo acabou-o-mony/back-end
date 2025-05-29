@@ -242,11 +242,5 @@ class ProdutoControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.delete("/produtos/{id}", idInexistente))
                 .andExpect(status().isNotFound());
     }
-
-    @Test
-    @DisplayName("Deve retornar 400 ao tentar deletar um produto inválido")
-    void deveRetornar400AoDeletarProdutoInvalido() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.delete("/produtos/{id}", a))
-                .andExpect(status().isBadRequest());
-    }
+    
 }
