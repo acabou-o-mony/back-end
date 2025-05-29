@@ -2,6 +2,7 @@ package br.com.solutis.venda_service.controller;
 
 import br.com.solutis.venda_service.dto.CarrinhoRequestDto;
 import br.com.solutis.venda_service.dto.CarrinhoResponseDto;
+import br.com.solutis.venda_service.exception.ProductNotFoundException;
 import br.com.solutis.venda_service.service.CarrinhoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,9 +51,15 @@ public class CarrinhoController {
         try {
             carrinhoService.atualizarQuantidade(idCarrinho, idProduto, dto.quantidade());
             return ResponseEntity.status(HttpStatus.OK).build();
-        } catch (Exception e) {
+        } catch (ProductNotFoundException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
