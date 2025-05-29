@@ -7,8 +7,10 @@ import br.com.solutis.usuario_service.entity.Usuario;
 import br.com.solutis.usuario_service.entity.cartao.Cartao;
 import br.com.solutis.usuario_service.entity.conta.Conta;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class ContaMapper {
     public Conta toEntity(ContaRequestDto dto){
@@ -66,5 +68,15 @@ public class ContaMapper {
         dto.setCartao(ctDto);
 
         return dto;
+    }
+
+    public List<ContaResponseDto> toListDto(List<Conta> contas){
+        List<ContaResponseDto> dtos = new ArrayList<>();
+
+        for(Conta conta : contas){
+            dtos.add(toDto(conta));
+        }
+
+        return dtos;
     }
 }
