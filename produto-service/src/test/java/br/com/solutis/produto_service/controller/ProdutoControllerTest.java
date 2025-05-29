@@ -2,6 +2,7 @@ package br.com.solutis.produto_service.controller;
 
 import br.com.solutis.produto_service.dto.ProdutoRequestDto;
 import br.com.solutis.produto_service.dto.ProdutoResponseDto;
+import br.com.solutis.produto_service.dto.ProdutoUpdateDto;
 import br.com.solutis.produto_service.entity.Produto;
 import br.com.solutis.produto_service.mapper.ProdutoMapper;
 import br.com.solutis.produto_service.service.ProdutoService;
@@ -47,6 +48,11 @@ class ProdutoControllerTest {
 
     private ProdutoResponseDto responseDto;
 
+    private ProdutoUpdateDto updateDto;
+
+    //METODO PARA TESTAR O BAD REQUEST
+    private ProdutoUpdateDto updateDtoInvalido;
+
     @BeforeEach
     void setUp() {
 
@@ -87,6 +93,10 @@ class ProdutoControllerTest {
                 true,
                 LocalDate.of(2025, 5, 21)
         );
+
+        updateDto = new ProdutoUpdateDto(50, false);
+
+        updateDtoInvalido = new ProdutoUpdateDto(-5, null);
     }
 
     @Test
@@ -177,5 +187,40 @@ class ProdutoControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-    
+    @Test
+    @DisplayName("Deve atualizar o estoque e ativo de um produto existente e retornar 200")
+    void deveAtualizarProdutoComSucesso() throws Exception {
+        Produto produto = ProdutoMapper.toEntity(requestDto);
+        Produto produtoSalvo = produtoService.cadastrar(produto);
+
+        mockMvc.perform(MockMvcRequestBuilders.put("/produtos/{id}", produtoSalvo.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(updateDto)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.estoque").value(updateDto.estoque()))
+                .andExpect(jsonPath("$.ativo").value(updateDto.ativo()));
+    }
+
+    @Test
+    @DisplayName("Deve retornar 404 ao tentar atualizar um produto inexistente")
+    void deveRetornar404QuandoProdutoNaoExiste() throws Exception {
+        Long idInexistente = 99L;
+
+        mockMvc.perform(MockMvcRequestBuilders.put("/produtos/{id}", idInexistente)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(updateDto)))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @DisplayName("Deve retornar 400 ao enviar dados inválidos para atualização")
+    void deveRetornar400ParaDadosInvalidosNaAtualizacao() throws Exception {
+        Produto produto = ProdutoMapper.toEntity(requestDto);
+        Produto produtoSalvo = produtoService.cadastrar(produto);
+
+        mockMvc.perform(MockMvcRequestBuilders.put("/produtos/{id}", produtoSalvo.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(updateDtoInvalido)))
+                .andExpect(status().isBadRequest());
+    }
 }

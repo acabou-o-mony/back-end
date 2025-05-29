@@ -59,13 +59,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ProdutoControllerTest.deveAtualizarProdutoComSucesso.executor": "Run",
     "JUnit.ProdutoControllerTest.deveBuscarProdutoPorIdComSucesso.executor": "Run",
     "JUnit.ProdutoControllerTest.deveCadastrarUmUsuarioComSucesso.executor": "Run",
     "JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente.executor": "Run",
     "JUnit.ProdutoControllerTest.deveListarProdutosCadastradosComSucesso.executor": "Run",
     "JUnit.ProdutoControllerTest.deveRetornar204QuandoNaoHouverTarefas.executor": "Run",
     "JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidos.executor": "Run",
+    "JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidosNaAtualizacao.executor": "Run",
     "JUnit.ProdutoControllerTest.deveRetornar404QuandoNaoEncontrarProdutoPorId.executor": "Run",
+    "JUnit.ProdutoControllerTest.deveRetornar404QuandoProdutoNaoExiste.executor": "Run",
     "JUnit.ProdutoControllerTest.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -108,8 +111,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProdutoControllerTest.deveRetornar404QuandoNaoEncontrarProdutoPorId">
-    <configuration name="ProdutoControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidosNaAtualizacao">
+    <configuration name="ProdutoControllerTest.deveAtualizarProdutoComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="produto-service" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +122,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="deveAtualizarProdutoComSucesso" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,7 +144,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProdutoControllerTest.deveRetornar400ParaDadosInvalidosNaAtualizacao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="produto-service" />
       <extension name="coverage">
         <pattern>
@@ -150,23 +154,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProdutoControllerTest.deveRetornar400ParaDadosInvalidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="produto-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveRetornar400ParaDadosInvalidos" />
+      <option name="METHOD_NAME" value="deveRetornar400ParaDadosInvalidosNaAtualizacao" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -183,6 +171,22 @@
       <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
       <option name="METHOD_NAME" value="deveRetornar404QuandoNaoEncontrarProdutoPorId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProdutoControllerTest.deveRetornar404QuandoProdutoNaoExiste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="produto-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
+      <option name="METHOD_NAME" value="deveRetornar404QuandoProdutoNaoExiste" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -232,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidosNaAtualizacao" />
+        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar404QuandoProdutoNaoExiste" />
+        <item itemvalue="JUnit.ProdutoControllerTest.deveAtualizarProdutoComSucesso" />
         <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar404QuandoNaoEncontrarProdutoPorId" />
         <item itemvalue="JUnit.ProdutoControllerTest.deveBuscarProdutoPorIdComSucesso" />
-        <item itemvalue="JUnit.ProdutoControllerTest" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidos" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +264,8 @@
       <workItem from="1748350250571" duration="50000" />
       <workItem from="1748440108614" duration="8492000" />
       <workItem from="1748453371097" duration="2872000" />
-      <workItem from="1748456301870" duration="1627000" />
+      <workItem from="1748456301870" duration="2120000" />
+      <workItem from="1748521951930" duration="1473000" />
     </task>
     <servers />
   </component>
@@ -272,8 +277,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
-          <line>93</line>
-          <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveCadastrarUmUsuarioComSucesso">
+          <line>103</line>
+          <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveCadastrarUmProdutoComSucesso">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -281,7 +286,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
-          <line>116</line>
+          <line>126</line>
           <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveLancarErroConflitoAoCadastrarProdutoComNomeExistente">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
