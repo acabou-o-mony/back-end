@@ -224,5 +224,29 @@ class ProdutoControllerTest {
                 .andExpect(status().isBadRequest());
     }
 
+    @Test
+    @DisplayName("Deve retornar 204 ao deletar o produto com o ID fornecido")
+    void deveDeletarProdutoPorIdComSucesso() throws Exception {
+        Produto produto = ProdutoMapper.toEntity(requestDto);
+        Produto produtoSalvo = produtoService.cadastrar(produto);
 
+        mockMvc.perform(MockMvcRequestBuilders.delete("/produtos/{id}", produtoSalvo.getId()))
+                .andExpect(status().isNoContent());
+    }
+
+    @Test
+    @DisplayName("Deve retornar 404 ao tentar deletar um produto inexistente")
+    void deveRetornar404AoDeletarProdutoInexistente() throws Exception {
+
+        Long idInexistente = 99L;
+        mockMvc.perform(MockMvcRequestBuilders.delete("/produtos/{id}", idInexistente))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @DisplayName("Deve retornar 400 ao tentar deletar um produto inválido")
+    void deveRetornar400AoDeletarProdutoInvalido() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.delete("/produtos/{id}", a))
+                .andExpect(status().isBadRequest());
+    }
 }
