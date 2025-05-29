@@ -1,6 +1,9 @@
 package br.com.solutis.usuario_service.mapper;
 
+import br.com.solutis.usuario_service.dto.cartao.CartaoResponseDto;
 import br.com.solutis.usuario_service.dto.conta.ContaRequestDto;
+import br.com.solutis.usuario_service.dto.conta.ContaResponseDto;
+import br.com.solutis.usuario_service.entity.Usuario;
 import br.com.solutis.usuario_service.entity.cartao.Cartao;
 import br.com.solutis.usuario_service.entity.conta.Conta;
 
@@ -24,14 +27,11 @@ public class ContaMapper {
         entity.setData_criacao(date);
         // CARTÃO A SER GERADO!
 
-
-
         // SETTERS DE CARTÃO COM PAYLOAD
         cartao.setNumero(dto.getCartao().getNumero());
         cartao.setCvv(dto.getCartao().getCvv());
         cartao.setTipo(dto.getCartao().getTipo());
         cartao.setBanco(dto.getCartao().getBanco());
-
 
         // PARA GERACAO DE VALIDADE DO CARTAO
         Calendar cal = Calendar.getInstance();
@@ -45,5 +45,26 @@ public class ContaMapper {
         entity.setCartao(cartao);
 
         return entity;
+    }
+
+    public ContaResponseDto toDto(Conta conta){
+        ContaResponseDto dto = new ContaResponseDto();
+        CartaoResponseDto ctDto = new CartaoResponseDto();
+
+        // Setters de conta DTO
+        dto.setId(conta.getId());
+        dto.setNumero(conta.getNumero());
+        dto.setAgencia(conta.getAgencia());
+        dto.setSaldo(conta.getSaldo());
+        dto.setData_criacao(conta.getData_criacao());
+
+        // Setters de cartao DTO
+        ctDto.setValidade(conta.getCartao().getValidade());
+        ctDto.setTipo(conta.getCartao().getTipo());
+        ctDto.setLimite(conta.getCartao().getLimite());
+
+        dto.setCartao(ctDto);
+
+        return dto;
     }
 }

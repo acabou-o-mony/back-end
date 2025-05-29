@@ -13,4 +13,5 @@ public class ContaRequestDto {
     private Double saldo;
     private Status status;
     private Cartao cartao;
+    private Integer usuarioId;
 }
