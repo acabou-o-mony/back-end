@@ -9,7 +9,6 @@ import br.com.solutis.transacao_service.service.TransacaoService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -46,6 +45,13 @@ public class TransacaoController {
 
     @GetMapping("/{id}/pendentes")
     public ResponseEntity<List<TransacaoResumedResponseDto>> listarPendentesPorId(@PathVariable Long id) {
+        List<Transacao> lista = service.listarPendentesPorId(id);
+
+        return (lista.isEmpty()) ? ResponseEntity.status(204).build() : ResponseEntity.status(200).body(lista.stream().map(mapper::toResumedResponse).toList());
+    }
+
+    @GetMapping("/{id}/falhas")
+    public ResponseEntity<List<TransacaoResumedResponseDto>> listarFalhasPorId(@PathVariable Long id) {
         List<Transacao> lista = service.listarPendentesPorId(id);
 
         return (lista.isEmpty()) ? ResponseEntity.status(204).build() : ResponseEntity.status(200).body(lista.stream().map(mapper::toResumedResponse).toList());
