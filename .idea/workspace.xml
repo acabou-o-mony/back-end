@@ -94,7 +94,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.VendaServiceApplication">
+  <component name="RunManager" selected="JUnit.ProdutoServiceTest">
     <configuration name="ProdutoServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.ProdutoServiceApplication" />
       <module name="produto-service" />
@@ -152,18 +152,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProdutoControllerTest.deveRetornar400ParaDadosInvalidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProdutoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="produto-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
+          <option name="PATTERN" value="br.com.solutis.produto_service.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveRetornar400ParaDadosInvalidos" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.service" />
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.service.ProdutoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,6 +195,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UsuarioServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="usuario-microservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.solutis.usuario_service.UsuarioServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VendaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="venda-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.solutis.venda_service.VendaServiceApplication" />
@@ -205,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProdutoServiceTest" />
         <item itemvalue="Application.VendaServiceApplication" />
         <item itemvalue="Application.ProdutoServiceApplication" />
         <item itemvalue="JUnit.ProdutoControllerTest" />
         <item itemvalue="JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidos" />
       </list>
     </recent_temporary>
   </component>

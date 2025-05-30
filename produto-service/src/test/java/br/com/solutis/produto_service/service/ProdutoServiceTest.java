@@ -133,8 +133,8 @@ class ProdutoServiceTest {
     }
 
     @Test
-    @DisplayName("Deve lançar exceção ao buscar produto com ID inexistente")
-    void deveLancarExcecaoAoBuscarProdutoComIdInexistente() {
+    @DisplayName("Deve lançar exceção ao atualizar com ID inexistente")
+    void deveLancarExcecaoAAtualizarProdutoComIdInexistente() {
         when(repository.findById(1L)).thenReturn(Optional.empty());
 
         assertThrows(EntidadeNaoEncontradaException.class, () -> service.atualizar(produto));
@@ -152,12 +152,35 @@ class ProdutoServiceTest {
     }
 
     @Test
-    @DisplayName("Deve lançar exceção ao buscar ID inexistente no banco")
-    void deveLancarExcecaoAoBuscarIdInexistenteNoBanco() {
+    @DisplayName("Deve lançar exceção ao deletar ID inexistente no banco")
+    void deveLancarExcecaoAoDeletarIdInexistenteNoBanco() {
         when(repository.existsById(1L)).thenReturn(false);
 
         assertThrows(EntidadeNaoEncontradaException.class, () -> service.deletar(1L));
         verify(repository, never()).deleteById(1L);
+    }
+
+    @Test
+    @DisplayName("Deve listar todos os produtos ativos ao chamar o metodo de listar")
+    void deveListarTodosOsProdutosAtivos() {
+        when(repository.findByAtivoTrue()).thenReturn(List.of(produto));
+
+        List<Produto> produtos = service.listarAtivos();
+
+        assertEquals(1, produtos.size());
+        verify(repository, times(1)).findByAtivoTrue();
+    }
+
+    @Test
+    @DisplayName("Deve listar todos os produtos que contenham parte do nome ao chamar o método buscarPorNome")
+    void deveListarProdutosPorNome() {
+        when(repository.findByNomeContainingIgnoreCase("coca-cola"))
+                .thenReturn(List.of(produto));
+
+        List<Produto> produtos = service.buscarPorNome("coca-cola");
+
+        assertEquals(1, produtos.size());
+        verify(repository, times(1)).findByNomeContainingIgnoreCase("coca-cola");
     }
 
 }
