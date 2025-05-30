@@ -58,4 +58,7 @@ public class TransacaoService {
         return repository.findAllByCartaoIdAndStatusEquals(id, Status.CANCELADO);
     }
 
+    public List<Transacao> listarSucessosPorId(Long id) {
+        return repository.findAllByCartaoIdAndStatusEquals(id, Status.SUCESSO);
+    }
 }

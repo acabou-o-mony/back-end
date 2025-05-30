@@ -28,7 +28,7 @@ public class TransacaoController {
 
     @PostMapping
     public ResponseEntity<TransacaoResponseDto> novaTransacao(@RequestBody TransacaoRequestDto req) {
-//        String url = "http://localhost:8085/carrinho/" + req.getPedidoId();
+//        String url = "http://localhost:8085/pedidos/" + req.getPedidoId();
 //        Object pedido =template.getForObject(url, Object.class);
         return ResponseEntity.status(201).body(mapper.toResponse(service.novaTransacao(req)));
     }
@@ -53,6 +53,13 @@ public class TransacaoController {
     @GetMapping("/{id}/falhas")
     public ResponseEntity<List<TransacaoResumedResponseDto>> listarFalhasPorId(@PathVariable Long id) {
         List<Transacao> lista = service.listarPendentesPorId(id);
+
+        return (lista.isEmpty()) ? ResponseEntity.status(204).build() : ResponseEntity.status(200).body(lista.stream().map(mapper::toResumedResponse).toList());
+    }
+
+    @GetMapping("/{id}/sucessos")
+    public ResponseEntity<List<TransacaoResumedResponseDto>> listarSucessosPorId(@PathVariable Long id) {
+        List<Transacao> lista = service.listarSucessosPorId(id);
 
         return (lista.isEmpty()) ? ResponseEntity.status(204).build() : ResponseEntity.status(200).body(lista.stream().map(mapper::toResumedResponse).toList());
     }
