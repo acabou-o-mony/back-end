@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2afe467-da9c-4094-9776-a4cf7f3041f2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/controller/TransacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/controller/TransacaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/entity/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/entity/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/mapper/TransacaoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/mapper/TransacaoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/service/TransacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/service/TransacaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="d2afe467-da9c-4094-9776-a4cf7f3041f2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -30,55 +23,49 @@
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
-    &quot;isMigrated&quot;: true
-    }</component>
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
-    &quot;customColor&quot;: &quot;&quot;,
-    &quot;associatedIndex&quot;: 4
-    }</component>
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2xgC46qKep6HhZCg737aLDWyiUV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ProdutoServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TransacaoServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VendaServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveCadastrarUmUsuarioComSucesso.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveDeletarProdutoPorIdComSucesso.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveDeletarTarefaPorIdComSucesso.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveListarProdutosCadastradosComSucesso.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveRetornar204QuandoNaoHouverTarefas.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveRetornar204SemProdutosAtivos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveRetornar404AoDeletarProdutoInexistente.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.deveRetornarProdutosAtivosComTodosOsCampos.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProdutoControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ProdutoServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/matheus.makiyama/Desktop/MatheusYukio/AcabouOMony/back-end&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProdutoServiceApplication.executor": "Run",
+    "Application.VendaServiceApplication.executor": "Run",
+    "JUnit.ProdutoControllerTest.deveCadastrarUmUsuarioComSucesso.executor": "Run",
+    "JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente.executor": "Run",
+    "JUnit.ProdutoControllerTest.deveListarProdutosCadastradosComSucesso.executor": "Run",
+    "JUnit.ProdutoControllerTest.deveRetornar204QuandoNaoHouverTarefas.executor": "Run",
+    "JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidos.executor": "Run",
+    "JUnit.ProdutoControllerTest.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ProdutoServiceApplication.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tales.ito/Documents/ElasticCode/Acabou o Mony/back-end",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -98,13 +85,26 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TransacaoServiceApplication">
-    <configuration name="TransacaoServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.transacao_service.TransacaoServiceApplication" />
-      <module name="transacao-service" />
+  <component name="RunManager" selected="Application.VendaServiceApplication">
+    <configuration name="ProdutoServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.ProdutoServiceApplication" />
+      <module name="produto-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.solutis.transacao_service.*" />
+          <option name="PATTERN" value="br.com.solutis.produto_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VendaServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.venda_service.VendaServiceApplication" />
+      <module name="venda-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.venda_service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,7 +127,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProdutoControllerTest.deveBuscarProdutoPorNomeComTodosOsCampos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="produto-service" />
       <extension name="coverage">
         <pattern>
@@ -137,13 +137,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveBuscarProdutoPorNomeComTodosOsCampos" />
+      <option name="METHOD_NAME" value="deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProdutoControllerTest.deveRetornar204SemProdutosAtivos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProdutoControllerTest.deveRetornar400ParaDadosInvalidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="produto-service" />
       <extension name="coverage">
         <pattern>
@@ -153,23 +153,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveRetornar204SemProdutosAtivos" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProdutoControllerTest.deveRetornar204SemProdutosComNomeEspecifico" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="produto-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveRetornar204SemProdutosComNomeEspecifico" />
+      <option name="METHOD_NAME" value="deveRetornar400ParaDadosInvalidos" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TransacaoServiceApplication" />
+        <item itemvalue="Application.VendaServiceApplication" />
+        <item itemvalue="Application.ProdutoServiceApplication" />
         <item itemvalue="JUnit.ProdutoControllerTest" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar204SemProdutosComNomeEspecifico" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveBuscarProdutoPorNomeComTodosOsCampos" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar204SemProdutosAtivos" />
+        <item itemvalue="JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" />
+        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar400ParaDadosInvalidos" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +228,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
           <line>93</line>
-          <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest">
+          <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveCadastrarUmUsuarioComSucesso">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -253,7 +237,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/produto-service/src/test/java/br/com/solutis/produto_service/controller/ProdutoControllerTest.java</url>
           <line>116</line>
-          <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveRetornar400ParaDadosInvalidos">
+          <properties class="br.com.solutis.produto_service.controller.ProdutoControllerTest" method="deveLancarErroConflitoAoCadastrarProdutoComNomeExistente">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
