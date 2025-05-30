@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d2afe467-da9c-4094-9776-a4cf7f3041f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/controller/TransacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/controller/TransacaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/entity/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/entity/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/mapper/TransacaoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/mapper/TransacaoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/service/TransacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/service/TransacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +42,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
-    &quot;keyToString&quot;: {
+  &quot;keyToString&quot;: {
     &quot;Application.ProdutoServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TransacaoServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.VendaServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ProdutoControllerTest.deveCadastrarUmUsuarioComSucesso.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ProdutoControllerTest.deveDeletarProdutoPorIdComSucesso.executor&quot;: &quot;Run&quot;,
@@ -71,8 +77,8 @@
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-    }
-    }</component>
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -92,7 +98,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProdutoControllerTest">
+  <component name="RunManager" selected="Application.TransacaoServiceApplication">
+    <configuration name="TransacaoServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.transacao_service.TransacaoServiceApplication" />
+      <module name="transacao-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.transacao_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProdutoControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="produto-service" />
       <extension name="coverage">
@@ -156,22 +175,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProdutoControllerTest.deveRetornarProdutosAtivosComTodosOsCampos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="produto-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveRetornarProdutosAtivosComTodosOsCampos" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AcabouOMonyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="acabou-o-mony" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.solutis.acabou_o_mony.AcabouOMonyApplication" />
@@ -209,21 +212,13 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TransacaoServiceApplication" />
         <item itemvalue="JUnit.ProdutoControllerTest" />
         <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar204SemProdutosComNomeEspecifico" />
         <item itemvalue="JUnit.ProdutoControllerTest.deveBuscarProdutoPorNomeComTodosOsCampos" />
         <item itemvalue="JUnit.ProdutoControllerTest.deveRetornar204SemProdutosAtivos" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveRetornarProdutosAtivosComTodosOsCampos" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

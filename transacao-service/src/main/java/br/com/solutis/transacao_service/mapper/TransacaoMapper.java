@@ -5,9 +5,11 @@ import br.com.solutis.transacao_service.dto.TransacaoResponseDto;
 import br.com.solutis.transacao_service.dto.TransacaoResumedResponseDto;
 import br.com.solutis.transacao_service.entity.Status;
 import br.com.solutis.transacao_service.entity.Transacao;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
+@Component
 public class TransacaoMapper {
 
     public Transacao toEntity(TransacaoRequestDto req) {

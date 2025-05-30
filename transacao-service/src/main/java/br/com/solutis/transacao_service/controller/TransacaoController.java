@@ -28,8 +28,8 @@ public class TransacaoController {
 
     @PostMapping
     public ResponseEntity<TransacaoResponseDto> novaTransacao(@RequestBody TransacaoRequestDto req) {
-        String url = "http://localhost:8085/carrinho/" + req.getPedidoId();
-        Object pedido =template.getForObject(url, Object.class);
+//        String url = "http://localhost:8085/carrinho/" + req.getPedidoId();
+//        Object pedido =template.getForObject(url, Object.class);
         return ResponseEntity.status(201).body(mapper.toResponse(service.novaTransacao(req)));
     }
 

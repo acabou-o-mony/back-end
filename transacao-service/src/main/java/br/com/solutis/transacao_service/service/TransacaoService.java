@@ -1,7 +1,6 @@
 package br.com.solutis.transacao_service.service;
 
 import br.com.solutis.transacao_service.dto.TransacaoRequestDto;
-import br.com.solutis.transacao_service.dto.TransacaoResponseDto;
 import br.com.solutis.transacao_service.dto.TransacaoResumedResponseDto;
 import br.com.solutis.transacao_service.entity.Status;
 import br.com.solutis.transacao_service.entity.Transacao;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -42,7 +40,7 @@ public class TransacaoService {
             if (paga) {
                 entity.setStatus(Status.SUCESSO);
             } else {
-                entity.setStatus(Status.FALHA);
+                entity.setStatus(Status.CANCELADO);
             }
 
             return repository.save(entity);
@@ -57,7 +55,7 @@ public class TransacaoService {
     }
 
     public List<Transacao> listarFalhasPorId(Long id) {
-        return repository.findAllByCartaoIdAndStatusEquals(id, Status.FALHA);
+        return repository.findAllByCartaoIdAndStatusEquals(id, Status.CANCELADO);
     }
 
 }
