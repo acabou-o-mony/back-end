@@ -29,15 +29,19 @@ public class TransacaoService {
         return (transacoes.isEmpty()) ? null : transacoes;
     }
 
+    public Transacao buscarPorId(Long id) {
+        return repository.findById(id).get();
+    }
+
     public Transacao novaTransacao(TransacaoRequestDto req) {
         return repository.save(mapper.toEntity(req));
     }
 
-    public Transacao atualizarTransacao(Long id, boolean paga) {
+    public Transacao atualizarTransacao(Long id, String status) {
         if (repository.existsById(id)) {
             Transacao entity = repository.findById(id).get();
 
-            if (paga) {
+            if (status == "PAGO") {
                 entity.setStatus(Status.SUCESSO);
             } else {
                 entity.setStatus(Status.CANCELADO);

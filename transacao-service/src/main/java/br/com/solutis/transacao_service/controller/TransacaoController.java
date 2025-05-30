@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/transacoes")
@@ -28,36 +29,41 @@ public class TransacaoController {
 
     @PostMapping
     public ResponseEntity<TransacaoResponseDto> novaTransacao(@RequestBody TransacaoRequestDto req) {
-//        String url = "http://localhost:8085/pedidos/" + req.getPedidoId();
-//        Object pedido =template.getForObject(url, Object.class);
+        String url = "http://localhost:8085/pedidos/" + req.getPedidoId();
+        Object pedido =template.getForObject(url, Object.class);
         return ResponseEntity.status(201).body(mapper.toResponse(service.novaTransacao(req)));
     }
 
-    // TODO: Atualizar essa validação de pagamento posteriormente
-    @PutMapping("/paga/{id}")
-    public ResponseEntity<TransacaoResponseDto> atualizarTransacao(@PathVariable Long id, @RequestBody boolean paga) {
+    @PutMapping("/atualizar/{id}")
+    public ResponseEntity<TransacaoResponseDto> atualizarTransacao(@PathVariable Long id) {
         if (id == null) return ResponseEntity.status(400).build();
 
-        Transacao entity = service.atualizarTransacao(id, paga);
+        Transacao entity = service.buscarPorId(id);
+
+        String url = "http://localhost:8085/pedidos/" + entity.getPedidoId();
+        Map<String, Object> pedido = template.getForObject(url, Map.class);
+        String status = (String) pedido.get("status");
+
+        entity = service.atualizarTransacao(id, status);
 
         return (entity == null) ? ResponseEntity.status(404).build() : ResponseEntity.status(200).body(mapper.toResponse(entity));
     }
 
-    @GetMapping("/{id}/pendentes")
+    @GetMapping("/pendentes/{id}")
     public ResponseEntity<List<TransacaoResumedResponseDto>> listarPendentesPorId(@PathVariable Long id) {
         List<Transacao> lista = service.listarPendentesPorId(id);
 
         return (lista.isEmpty()) ? ResponseEntity.status(204).build() : ResponseEntity.status(200).body(lista.stream().map(mapper::toResumedResponse).toList());
     }
 
-    @GetMapping("/{id}/falhas")
+    @GetMapping("/falhas/{id}")
     public ResponseEntity<List<TransacaoResumedResponseDto>> listarFalhasPorId(@PathVariable Long id) {
         List<Transacao> lista = service.listarPendentesPorId(id);
 
         return (lista.isEmpty()) ? ResponseEntity.status(204).build() : ResponseEntity.status(200).body(lista.stream().map(mapper::toResumedResponse).toList());
     }
 
-    @GetMapping("/{id}/sucessos")
+    @GetMapping("/sucessos/{id}")
     public ResponseEntity<List<TransacaoResumedResponseDto>> listarSucessosPorId(@PathVariable Long id) {
         List<Transacao> lista = service.listarSucessosPorId(id);
 
