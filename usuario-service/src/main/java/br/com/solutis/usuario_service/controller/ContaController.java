@@ -2,7 +2,6 @@ package br.com.solutis.usuario_service.controller;
 
 import br.com.solutis.usuario_service.dto.conta.ContaRequestDto;
 import br.com.solutis.usuario_service.dto.conta.ContaResponseDto;
-import br.com.solutis.usuario_service.entity.conta.Conta;
 import br.com.solutis.usuario_service.service.ContaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +25,13 @@ public class ContaController {
     // READ
     @GetMapping
     public ResponseEntity<List<ContaResponseDto>> listar(){
-        return ResponseEntity.ok(service.listar());
+        List<ContaResponseDto> dtos = service.listar();
+
+        if (dtos.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+
+        return ResponseEntity.ok(dtos);
     }
 
     @GetMapping("/{id}")
