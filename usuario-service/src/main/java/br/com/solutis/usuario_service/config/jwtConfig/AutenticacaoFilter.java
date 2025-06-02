@@ -35,6 +35,8 @@ public class AutenticacaoFilter extends OncePerRequestFilter {
         String requestTokenHeader = request.getHeader("Authorization");
 
         if (Objects.nonNull(requestTokenHeader) && requestTokenHeader.startsWith("Bearer ")){
+            jwtToken = requestTokenHeader.substring(7);
+
             try {
                 userName = jwtTokenManager.getUserNameFromToken(jwtToken);
             } catch (ExpiredJwtException exception){

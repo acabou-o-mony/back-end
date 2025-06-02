@@ -1,10 +1,7 @@
 package br.com.solutis.usuario_service.service;
 
 import br.com.solutis.usuario_service.config.jwtConfig.GerenciadorTokenJwt;
-import br.com.solutis.usuario_service.dto.usuario.UsuarioRequestDto;
-import br.com.solutis.usuario_service.dto.usuario.UsuarioResponseDto;
-import br.com.solutis.usuario_service.dto.usuario.UsuarioTokenDto;
-import br.com.solutis.usuario_service.dto.usuario.UsuarioUpdateDto;
+import br.com.solutis.usuario_service.dto.usuario.*;
 import br.com.solutis.usuario_service.entity.Usuario;
 import br.com.solutis.usuario_service.exceptions.EntidadeNaoEncontradaException;
 import br.com.solutis.usuario_service.mapper.UsuarioMapper;
@@ -83,7 +80,9 @@ public class UsuarioService {
     }
 
     // AUTENTICAÇÃO E GERENCIAMENTO DE TOKEN
-    public UsuarioTokenDto autenticar(Usuario usuario){
+    public UsuarioTokenDto autenticar(UsuarioLoginDto dto){
+        Usuario usuario = mapper.of(dto);
+
         final UsernamePasswordAuthenticationToken credentials = new UsernamePasswordAuthenticationToken(
                 usuario.getEmail(), usuario.getSenha()
         );
