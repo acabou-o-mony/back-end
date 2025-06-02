@@ -18,7 +18,7 @@ public class UsuarioController {
     private UsuarioService service;
 
     // CREATE
-    @PostMapping
+    @PostMapping("/cadastro")
     public ResponseEntity<UsuarioResponseDto> cadastrar(@Valid @RequestBody UsuarioRequestDto dto){
         return ResponseEntity.ok(service.cadastrar(dto));
     }
