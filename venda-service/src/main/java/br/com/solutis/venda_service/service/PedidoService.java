@@ -3,6 +3,7 @@ package br.com.solutis.venda_service.service;
 import br.com.solutis.venda_service.entity.Carrinho;
 import br.com.solutis.venda_service.entity.Pedido;
 import br.com.solutis.venda_service.entity.Status;
+import br.com.solutis.venda_service.exception.PedidoNotFoundException;
 import br.com.solutis.venda_service.repository.CarrinhoRepository;
 import br.com.solutis.venda_service.repository.PedidoRepository;
 import org.springframework.stereotype.Service;
@@ -57,7 +58,7 @@ public class PedidoService {
 
     public Pedido buscarPorId(Long id) {
         return pedidoRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Pedido não encontrado para o ID: " + id));
+                .orElseThrow(() -> new PedidoNotFoundException("Pedido não encontrado para o ID: " + id));
     }
 
     public Pedido atualizarStatus(Long id, Status novoStatus) {
