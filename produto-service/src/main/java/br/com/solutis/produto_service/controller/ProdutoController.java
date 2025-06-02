@@ -4,6 +4,7 @@ import br.com.solutis.produto_service.dto.ProdutoRequestDto;
 import br.com.solutis.produto_service.dto.ProdutoResponseDto;
 import br.com.solutis.produto_service.dto.ProdutoUpdateDto;
 import br.com.solutis.produto_service.entity.Produto;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import br.com.solutis.produto_service.mapper.ProdutoMapper;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/produtos")
+@Tag(name = "Controller - Produto", description = "Operações relacionadas aos produtos.")
 @RequiredArgsConstructor
 public class ProdutoController {
 
