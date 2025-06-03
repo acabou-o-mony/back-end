@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2afe467-da9c-4094-9776-a4cf7f3041f2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/br/com/solutis/api_gateway/filter/AuthWebFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/br/com/solutis/api_gateway/filter/AuthWebFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ProdutoServiceApplication.executor": "Run",
+    "Application.UsuarioServiceApplication.executor": "Run",
     "Application.VendaServiceApplication.executor": "Run",
     "JUnit.ProdutoControllerTest.deveCadastrarUmUsuarioComSucesso.executor": "Run",
     "JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente.executor": "Run",
@@ -68,6 +67,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
@@ -78,6 +80,10 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\enzo.nascimento\Downloads\novo-back\back-end\api-gateway" />
+      <recent name="C:\Users\enzo.nascimento\Downloads\novo-back\back-end\api-gateway\src\test\java" />
+      <recent name="C:\Users\enzo.nascimento\Downloads\novo-back\back-end\api-gateway\src\main\resources" />
+      <recent name="C:\Users\enzo.nascimento\Downloads\novo-back\back-end\api-gateway\src\main\java" />
       <recent name="C:\Users\enzo.nascimento\Downloads\novo-back\back-end\api_gateway" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -95,13 +101,26 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProdutoServiceTest">
+  <component name="RunManager" selected="Application.UsuarioServiceApplication">
     <configuration name="ProdutoServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.ProdutoServiceApplication" />
       <module name="produto-service" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="br.com.solutis.produto_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsuarioServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.usuario_service.UsuarioServiceApplication" />
+      <module name="usuario-microservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.usuario_service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,22 +152,6 @@
       <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="produto-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.solutis.produto_service.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.solutis.produto_service.controller" />
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.produto_service.controller.ProdutoControllerTest" />
-      <option name="METHOD_NAME" value="deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -212,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UsuarioServiceApplication" />
         <item itemvalue="JUnit.ProdutoServiceTest" />
         <item itemvalue="Application.VendaServiceApplication" />
         <item itemvalue="Application.ProdutoServiceApplication" />
         <item itemvalue="JUnit.ProdutoControllerTest" />
-        <item itemvalue="JUnit.ProdutoControllerTest.deveLancarErroConflitoAoCadastrarProdutoComNomeExistente" />
       </list>
     </recent_temporary>
   </component>
