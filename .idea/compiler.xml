@@ -12,7 +12,12 @@
         </processorPath>
         <module name="usuario-microservice" />
       </profile>
-      <profile name="Annotation profile for transacao-service" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for venda-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -20,11 +25,14 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="produto-service" />
-        <module name="transacao-service" />
         <module name="venda-service" />
+        <module name="transacao-service" />
         <module name="acabou-o-mony" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api_gateway" target="24" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
