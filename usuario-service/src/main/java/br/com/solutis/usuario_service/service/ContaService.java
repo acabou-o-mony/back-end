@@ -7,7 +7,7 @@ import br.com.solutis.usuario_service.entity.conta.Conta;
 import br.com.solutis.usuario_service.exceptions.EntidadeNaoEncontradaException;
 import br.com.solutis.usuario_service.mapper.ContaMapper;
 import br.com.solutis.usuario_service.repository.ContaRepository;
-import br.com.solutis.usuario_service.repository.UsuarioRespository;
+import br.com.solutis.usuario_service.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,7 @@ public class ContaService {
     private ContaRepository repositoryConta;
 
     @Autowired
-    private UsuarioRespository respositoryUser;
+    private UsuarioRepository respositoryUser;
 
     // CREATE
     public ContaResponseDto criar(ContaRequestDto dto){

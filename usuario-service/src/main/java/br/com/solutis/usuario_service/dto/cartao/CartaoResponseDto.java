@@ -10,4 +10,13 @@ public class CartaoResponseDto {
     private Date validade;
     private Tipo tipo;
     private Double limite;
+
+    public CartaoResponseDto(Date validade, Tipo tipo, Double limite) {
+        this.validade = validade;
+        this.tipo = tipo;
+        this.limite = limite;
+    }
+
+    public CartaoResponseDto() {
+    }
 }

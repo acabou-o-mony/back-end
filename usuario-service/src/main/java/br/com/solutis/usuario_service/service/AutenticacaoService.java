@@ -2,7 +2,7 @@ package br.com.solutis.usuario_service.service;
 
 import br.com.solutis.usuario_service.dto.usuario.UsuarioDetalhesDto;
 import br.com.solutis.usuario_service.entity.Usuario;
-import br.com.solutis.usuario_service.repository.UsuarioRespository;
+import br.com.solutis.usuario_service.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class AutenticacaoService implements UserDetailsService {
     @Autowired
-    private UsuarioRespository respository;
+    private UsuarioRepository respository;
 
     // Método da interface implementado
     @Override

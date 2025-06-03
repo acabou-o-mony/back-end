@@ -5,7 +5,7 @@ import br.com.solutis.usuario_service.dto.usuario.*;
 import br.com.solutis.usuario_service.entity.Usuario;
 import br.com.solutis.usuario_service.exceptions.EntidadeNaoEncontradaException;
 import br.com.solutis.usuario_service.mapper.UsuarioMapper;
-import br.com.solutis.usuario_service.repository.UsuarioRespository;
+import br.com.solutis.usuario_service.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -31,7 +31,7 @@ public class UsuarioService {
     private UsuarioMapper mapper = new UsuarioMapper(); // Classe nativa do projeto
 
     @Autowired
-    private UsuarioRespository respository;
+    private UsuarioRepository respository;
 
     // CREATE
     public UsuarioResponseDto cadastrar(UsuarioRequestDto dto){

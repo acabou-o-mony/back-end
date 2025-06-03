@@ -8,10 +8,13 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
 @Entity
 public class Cartao {
     @Id
@@ -29,4 +32,14 @@ public class Cartao {
     private String banco;
     @Positive
     private Double limite;
+
+    public Cartao(Integer id, String numero, Date validade, String cvv, Tipo tipo, String banco, Double limite) {
+        this.id = id;
+        this.numero = numero;
+        this.validade = validade;
+        this.cvv = cvv;
+        this.tipo = tipo;
+        this.banco = banco;
+        this.limite = limite;
+    }
 }
