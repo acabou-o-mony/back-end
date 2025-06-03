@@ -147,7 +147,7 @@ public class ContaServiceTest {
 
     @Test
     @DisplayName("Deve atualizar a conta com dados novos válidos e retorna-la atualizada")
-    void atualizarUsuario_comDadosValidos_deveRetornarUsuarioAtualizado(){
+    void atualizarConta_comDadosValidos_deveRetornarContaAtualizado(){
         // AMBIENTE
         ContaResponseDto contaAt = new ContaResponseDto();
         contaAt.setId(1);
