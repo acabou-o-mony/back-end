@@ -5,11 +5,12 @@ import br.com.solutis.transacao_service.entity.Tipo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
-public class TransacaoResponseDto {
+public class TransacaoResponseDto implements Serializable {
 
     private Double valor;
     private Tipo tipo;
