@@ -7,6 +7,7 @@ import br.com.solutis.transacao_service.entity.Transacao;
 import br.com.solutis.transacao_service.mapper.TransacaoMapper;
 import br.com.solutis.transacao_service.repository.TransacaoRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,9 @@ public class TransacaoService {
 
     @Autowired
     private TransacaoRepository repository;
+
+    @Autowired
+    private RabbitTemplate template;
 
     public List<TransacaoResumedResponseDto> listarPorIdCartao(Long id) {
         if (id == null) return null;
@@ -43,11 +47,17 @@ public class TransacaoService {
 
             if (status == "PAGO") {
                 entity.setStatus(Status.SUCESSO);
+                repository.save(entity);
+                template.convertAndSend("transacao.confirmada", entity);
+                return entity;
+
             } else {
                 entity.setStatus(Status.CANCELADO);
+
+                // TODO: Criar uma validação de cancelamento e retornar algo diferente de null.
+                return null;
             }
 
-            return repository.save(entity);
 
         } else {
             return null;

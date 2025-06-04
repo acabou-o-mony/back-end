@@ -29,11 +29,9 @@ public class GatewayController {
             ) {
 
         String baseUrl = switch (service) {
-            case "contas" -> "http://localhost:8080";
-            case "usuarios" -> "http://localhost:8080";
+            case "contas", "usuarios" -> "http://localhost:8080";
             case "produtos" -> "http://localhost:8081";
-            case "pedidos" -> "http://localhost:8085";
-            case "carrinhos" -> "http://localhost:8085";
+            case "pedidos", "carrinhos" -> "http://localhost:8085";
             case "transacoes" -> "http://localhost:8083";
             default -> null;
         };
