@@ -49,8 +49,8 @@ public class ContaService {
     }
 
     // UPDATE
-    public ContaResponseDto atualizar(Integer id, ContaRequestDto dto){
-        Conta conta = repositoryConta.findById(id)
+    public ContaResponseDto atualizar(Long id, ContaRequestDto dto){
+        Conta conta = repositoryConta.findById(Math.toIntExact(id))
                 .orElseThrow(() -> new EntidadeNaoEncontradaException("Conta com id %d não encontrada!".formatted(id)));
 
         conta.setId(id);

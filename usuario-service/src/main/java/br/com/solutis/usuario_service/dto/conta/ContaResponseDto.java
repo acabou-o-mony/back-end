@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 public class ContaResponseDto {
-    private Integer id;
+    private Long id;
     private String numero;
     private String agencia;
     private Double saldo;
