@@ -37,7 +37,7 @@ public class EmailService {
         String url = "http://localhost:8085/" + entity.getPedidoId();
         Pedido pedido = template.getForObject(url, Pedido.class);
 
-        Optional<Conta> conta = contaRepo.findById(pedido.getIdConta());
+        Optional<Conta> conta = contaRepo.findById(1);
         Usuario usuario = conta.get().getUsuario();
 
 
@@ -48,6 +48,25 @@ public class EmailService {
         sender.send(message);
 
         System.out.println("📤 E-mail de confirmação enviado para: " + usuario.getEmail());
+    }
+
+    public void enviarEmailCancelamento(Transacao entity) {
+        SimpleMailMessage message = new SimpleMailMessage();
+
+        String url = "http://localhost:8085/" + entity.getPedidoId();
+        Pedido pedido = template.getForObject(url, Pedido.class);
+
+        Optional<Conta> conta = contaRepo.findById(1);
+        Usuario usuario = conta.get().getUsuario();
+
+
+        message.setTo(usuario.getEmail());
+        message.setSubject("Transação cancelada");
+        message.setText("Olá " + usuario.getNome() + "\n\n" + "Seu pedido no valor de R$" + pedido.getTotal() + " foi cancelado.\n\nA transação não foi concluída.");
+
+        sender.send(message);
+
+        System.out.println("📤 E-mail de cancelamento enviado para: " + usuario.getEmail());
     }
 
 }

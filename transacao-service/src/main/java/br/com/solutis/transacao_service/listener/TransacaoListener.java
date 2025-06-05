@@ -13,9 +13,15 @@ public class TransacaoListener {
     private EmailService service;
 
     @RabbitListener(queues = "transacao.confirmada")
-    public void ouvirTransacao(Transacao entity) {
+    public void ouvirTransacaoConfirmada(Transacao entity) {
         System.out.println("🔔 Transacao paga com sucesso de valor R$" + entity.getValor());
         service.enviarEmailConfirmacao(entity);
+    }
+
+    @RabbitListener(queues = "transacao.cancelada")
+    public void ouvirTransacaoCancelada(Transacao entity) {
+        System.out.println("🔔 Transacao de valor R$" + entity.getValor() + " cancelada.");
+        service.enviarEmailCancelamento(entity);
     }
 
 }

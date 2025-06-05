@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -34,18 +35,20 @@ public class TransacaoService {
     }
 
     public Transacao buscarPorId(Long id) {
-        return repository.findById(id).get();
+        Optional<Transacao> foundEntity = repository.findById(id);
+
+        return foundEntity.orElse(null);
     }
 
     public Transacao novaTransacao(TransacaoRequestDto req) {
         return repository.save(mapper.toEntity(req));
     }
 
-    public Transacao atualizarTransacao(Long id, String status) {
+    public Transacao atualizarTransacao(Long id, boolean isPago) {
         if (repository.existsById(id)) {
             Transacao entity = repository.findById(id).get();
 
-            if (status == "PAGO") {
+            if (isPago) {
                 entity.setStatus(Status.SUCESSO);
                 repository.save(entity);
                 template.convertAndSend("transacao.confirmada", entity);
@@ -53,9 +56,9 @@ public class TransacaoService {
 
             } else {
                 entity.setStatus(Status.CANCELADO);
-
-                // TODO: Criar uma validação de cancelamento e retornar algo diferente de null.
-                return null;
+                repository.save(entity);
+                template.convertAndSend("transacao.cancelada", entity);
+                return entity;
             }
 
 
