@@ -62,7 +62,7 @@ public class ContaServiceTest {
         requestDto.setUsuarioId(1);
 
         // CRIAÇÃO DE RESPONSE CONTA
-        responseDto.setId(1);
+        responseDto.setId(1L);
         responseDto.setNumero("534");
         responseDto.setAgencia("02394");
         responseDto.setSaldo(321.9);
@@ -73,7 +73,7 @@ public class ContaServiceTest {
         usuario.setId(1);
 
         // CRIAÇÃO DE CONTA
-        conta.setId(1);
+        conta.setId(1L);
         conta.setNumero("534");
         conta.setAgencia("02394");
         conta.setTipo(Tipo.CORRENTE);
@@ -150,7 +150,7 @@ public class ContaServiceTest {
     void atualizarConta_comDadosValidos_deveRetornarContaAtualizado(){
         // AMBIENTE
         ContaResponseDto contaAt = new ContaResponseDto();
-        contaAt.setId(1);
+        contaAt.setId(1L);
         contaAt.setNumero("535");
         contaAt.setAgencia("1023");
         contaAt.setSaldo(321.9);
@@ -161,7 +161,7 @@ public class ContaServiceTest {
         when(mapper.toDto(conta)).thenReturn(contaAt);
 
         // AÇÃO
-        ContaResponseDto response = service.atualizar(1, requestDto);
+        ContaResponseDto response = service.atualizar(1L, requestDto);
 
         // RETORNO / ASSERÇÃO
         assertNotNull(response);
