@@ -41,11 +41,11 @@ public class TransacaoService {
         return repository.save(mapper.toEntity(req));
     }
 
-    public Transacao atualizarTransacao(Long id, String status) {
+    public Transacao atualizarTransacao(Long id, boolean isPago) {
         if (repository.existsById(id)) {
             Transacao entity = repository.findById(id).get();
 
-            if (status == "PAGO") {
+            if (isPago) {
                 entity.setStatus(Status.SUCESSO);
                 repository.save(entity);
                 template.convertAndSend("transacao.confirmada", entity);
@@ -53,9 +53,9 @@ public class TransacaoService {
 
             } else {
                 entity.setStatus(Status.CANCELADO);
-
-                // TODO: Criar uma validação de cancelamento e retornar algo diferente de null.
-                return null;
+                repository.save(entity);
+                template.convertAndSend("transacao.cancelada", entity);
+                return entity;
             }
 
 

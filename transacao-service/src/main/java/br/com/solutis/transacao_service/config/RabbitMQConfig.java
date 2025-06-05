@@ -16,6 +16,11 @@ public class RabbitMQConfig {
     }
 
     @Bean
+    public Queue transacaoCanceladaQueue() {
+        return new Queue("transacao.cancelada", true);
+    }
+
+    @Bean
     public Jackson2JsonMessageConverter messageConverter() {
         return new Jackson2JsonMessageConverter();
     }
