@@ -1,7 +1,6 @@
 package br.com.solutis.usuario_service.controller;
 
 import br.com.solutis.usuario_service.dto.usuario.*;
-import br.com.solutis.usuario_service.entity.Usuario;
 import br.com.solutis.usuario_service.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ public class UsuarioController {
     // CREATE
     @PostMapping("/cadastro")
     public ResponseEntity<UsuarioResponseDto> cadastrar(@Valid @RequestBody UsuarioRequestDto dto){
-        return ResponseEntity.ok(service.cadastrar(dto));
+        return ResponseEntity.status(201).body(service.cadastrar(dto));
     }
 
     @PostMapping("/login")
