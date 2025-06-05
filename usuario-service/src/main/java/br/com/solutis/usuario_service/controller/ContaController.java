@@ -45,7 +45,7 @@ public class ContaController {
             @PathVariable Integer id,
             @RequestBody ContaRequestDto dto
     ){
-        return ResponseEntity.ok(service.atualizar(id, dto));
+        return ResponseEntity.ok(service.atualizar(Long.valueOf(id), dto));
     }
 
     // DELETE

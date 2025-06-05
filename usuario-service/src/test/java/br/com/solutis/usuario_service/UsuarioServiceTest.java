@@ -1,9 +1,7 @@
 package br.com.solutis.usuario_service;
 
 import br.com.solutis.usuario_service.config.jwtConfig.GerenciadorTokenJwt;
-import br.com.solutis.usuario_service.dto.usuario.UsuarioRequestDto;
-import br.com.solutis.usuario_service.dto.usuario.UsuarioResponseDto;
-import br.com.solutis.usuario_service.dto.usuario.UsuarioUpdateDto;
+import br.com.solutis.usuario_service.dto.usuario.*;
 import br.com.solutis.usuario_service.entity.Usuario;
 import br.com.solutis.usuario_service.mapper.UsuarioMapper;
 import br.com.solutis.usuario_service.repository.UsuarioRepository;
@@ -16,6 +14,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
@@ -145,5 +145,55 @@ public class UsuarioServiceTest {
 
         // RETORNO / ASSERÇÃO
         assertNotNull(response);
+    }
+
+    @Test
+    @DisplayName("Deve deletar o usuário pelo id especificado e não retornar")
+    void deletarUsuario_comIdValido_naoDeveRetornar(){
+        // AMBIENTE
+        when(repository.existsById(1)).thenReturn(true);
+
+        // AÇÃO
+        service.deletarPorId(1);
+
+        // ASSERÇÃO
+        verify(repository, times(1)).existsById(1);
+        verify(repository, times(1)).deleteById(1);
+    }
+
+    @Test
+    @DisplayName("Deve autenticar usuário e retornar usuário autenticado com token")
+    void autenticarUsuario_comDadosValidos_deveRetornarUsuarioEToken(){
+        // AMBIENTE
+        UsuarioLoginDto loginDto = new UsuarioLoginDto("email@ex.com", "12345");
+
+        when(mapper.of(loginDto)).thenReturn(usuario);
+
+        UsernamePasswordAuthenticationToken credentials = new UsernamePasswordAuthenticationToken(
+                usuario.getEmail(), usuario.getSenha()
+        );
+        Authentication authenticationMock = mock(Authentication.class);
+
+        String fakeToken = "tokenJwtMockado";
+
+        when(gerenciadorTokenJwt.generateToken(authenticationMock)).thenReturn(fakeToken);
+        when(authenticationManager.authenticate(credentials)).thenReturn(authenticationMock);
+        when(repository.findByEmail(usuario.getEmail())).thenReturn(Optional.of(usuario));
+
+
+        UsuarioTokenDto usuarioTokenDtoEsperado = new UsuarioTokenDto(usuario, fakeToken);
+        when(mapper.of(usuario, fakeToken)).thenReturn(usuarioTokenDtoEsperado);
+
+        // AÇÃO
+        UsuarioTokenDto usuarioTokenDto = service.autenticar(loginDto);
+
+        // RETORNO / ASSERÇÃO
+        assertNotNull(usuarioTokenDto);
+        assertEquals(fakeToken, usuarioTokenDto.getToken());
+
+        verify(mapper, times(1)).of(loginDto);
+        verify(mapper, times(1)).of(usuario, fakeToken);
+        verify(repository, times(1)).findByEmail(usuario.getEmail());
+
     }
 }
