@@ -37,7 +37,7 @@ public class EmailService {
         String url = "http://localhost:8085/" + entity.getPedidoId();
         Pedido pedido = template.getForObject(url, Pedido.class);
 
-        Optional<Conta> conta = contaRepo.findById(pedido.getIdConta());
+        Optional<Conta> conta = contaRepo.findById(1);
         Usuario usuario = conta.get().getUsuario();
 
 
@@ -56,7 +56,7 @@ public class EmailService {
         String url = "http://localhost:8085/" + entity.getPedidoId();
         Pedido pedido = template.getForObject(url, Pedido.class);
 
-        Optional<Conta> conta = contaRepo.findById(pedido.getIdConta());
+        Optional<Conta> conta = contaRepo.findById(1);
         Usuario usuario = conta.get().getUsuario();
 
 

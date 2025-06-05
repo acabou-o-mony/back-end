@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -34,7 +35,9 @@ public class TransacaoService {
     }
 
     public Transacao buscarPorId(Long id) {
-        return repository.findById(id).get();
+        Optional<Transacao> foundEntity = repository.findById(id);
+
+        return foundEntity.orElse(null);
     }
 
     public Transacao novaTransacao(TransacaoRequestDto req) {
