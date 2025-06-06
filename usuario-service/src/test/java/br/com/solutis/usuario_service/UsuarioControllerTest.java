@@ -118,8 +118,12 @@ public class UsuarioControllerTest {
     }
 
     @Test
+    @WithMockUser
     @DisplayName("Quando acionado deve retornar uma lista de usuários")
     void listarUsuarios_retornarUsuarios() throws Exception{
+        repositoryConta.deleteAll();
+        repository.deleteAll();
+
         Usuario user1 = new Usuario();
         user1.setNome("Teste");
         user1.setEmail("teste@gmail");
