@@ -19,7 +19,7 @@ public class ContaController {
     // CREATE
     @PostMapping
     public ResponseEntity<ContaResponseDto> criar(@Valid @RequestBody ContaRequestDto dto){
-        return ResponseEntity.ok(service.criar(dto));
+        return ResponseEntity.status(201).body(service.criar(dto));
     }
 
     // READ
@@ -40,7 +40,7 @@ public class ContaController {
     }
 
     // UPDATE
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<ContaResponseDto> atualizar(
             @PathVariable Integer id,
             @RequestBody ContaRequestDto dto
@@ -50,7 +50,7 @@ public class ContaController {
 
     // DELETE
     @DeleteMapping("/{id}")
-    public ResponseEntity<ContaResponseDto> atualizar(@PathVariable Integer id){
+    public ResponseEntity<ContaResponseDto> deletar(@PathVariable Integer id){
         service.deletar(id);
         return ResponseEntity.status(204).build();
     }
