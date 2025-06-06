@@ -5,10 +5,12 @@ import br.com.solutis.usuario_service.dto.usuario.UsuarioRequestDto;
 import br.com.solutis.usuario_service.dto.usuario.UsuarioResponseDto;
 import br.com.solutis.usuario_service.dto.usuario.UsuarioTokenDto;
 import br.com.solutis.usuario_service.entity.Usuario;
+import br.com.solutis.usuario_service.repository.ContaRepository;
 import br.com.solutis.usuario_service.repository.UsuarioRepository;
 import br.com.solutis.usuario_service.service.UsuarioService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -41,6 +43,8 @@ public class UsuarioControllerTest {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private UsuarioRepository repository;
+    @Autowired
+    private ContaRepository repositoryConta;
 
     // Objetos para realização de testes
     private UsuarioRequestDto requestDto = new UsuarioRequestDto();
@@ -187,5 +191,27 @@ public class UsuarioControllerTest {
                 .content(objectMapper.writeValueAsString(user)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.nome").value("Raul"));
+    }
+
+    @Test
+    @WithMockUser
+    @DisplayName("Quando acionado deve deletar usuário pelo id passado e retornar noContent")
+    void deletarUsuario_existente_naoDeveRetornar() throws Exception{
+        Usuario usuario = new Usuario();
+        usuario.setNome("Teste");
+        usuario.setEmail("teste@gmail");
+        usuario.setSenha(passwordEncoder.encode("12345"));
+        usuario.setTelefone("123456789");
+        usuario.setTipo("tipo1");
+        usuario.setAtivo(true);
+
+        repositoryConta.deleteAll();
+        repository.deleteAll();
+
+        Usuario userResponse = repository.save(usuario);
+
+        mockMvc.perform(delete("/usuarios/" + userResponse.getId())
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNoContent());
     }
 }
