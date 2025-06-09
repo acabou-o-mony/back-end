@@ -36,6 +36,7 @@ public class PedidoController {
         }
     }
 
+
     @GetMapping
     public ResponseEntity<List<Pedido>> listarPedidos(@RequestParam Optional<Long> contaId) {
         List<Pedido> pedidos = pedidoService.listarPedidos(contaId);
