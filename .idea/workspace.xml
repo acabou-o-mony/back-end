@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e50bc7-cb52-4863-9c91-bad551360e2a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/venda-service/locust/pedidolocustfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transacao-service/locust/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/locust/locustfile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/TransacaoServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/TransacaoServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/controller/TransacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/controller/TransacaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/br/com/solutis/usuario_service/repository/ContaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/br/com/solutis/usuario_service/repository/ContaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venda-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/venda-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venda-service/src/main/java/br/com/solutis/venda_service/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/venda-service/src/main/java/br/com/solutis/venda_service/controller/PedidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venda-service/src/main/java/br/com/solutis/venda_service/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/venda-service/src/main/java/br/com/solutis/venda_service/service/PedidoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +21,7 @@
         <option value="JUnit5 Test Class" />
         <option value="package-info" />
         <option value="Class" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -44,8 +41,6 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ProdutoServiceApplication.executor": "Run",
-    "Application.TransacaoServiceApplication.executor": "Run",
-    "Application.UsuarioServiceApplication.executor": "Run",
     "Application.VendaServiceApplication.executor": "Run",
     "JUnit.PedidoServiceTest.executor": "Run",
     "JUnit.TransacaoServiceTests.criarTransacao_dadosValidos_retornaTransacao.executor": "Run",
@@ -56,6 +51,9 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/tales.ito/Documents/ElasticCode/Acabou o Mony/back-end",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
 }]]></component>
@@ -81,32 +79,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransacaoServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.transacao_service.TransacaoServiceApplication" />
-      <module name="transacao-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.solutis.transacao_service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UsuarioServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.usuario_service.UsuarioServiceApplication" />
-      <module name="usuario-microservice" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.solutis.usuario_service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="VendaServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.venda_service.VendaServiceApplication" />
       <module name="venda-service" />
@@ -116,6 +88,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PedidoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="venda-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.venda_service.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.solutis.venda_service.service" />
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.venda_service.service.PedidoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,11 +125,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TransacaoServiceApplication" />
         <item itemvalue="Application.VendaServiceApplication" />
-        <item itemvalue="Application.UsuarioServiceApplication" />
         <item itemvalue="Application.ProdutoServiceApplication" />
         <item itemvalue="JUnit.TransacaoServiceTests.criarTransacao_dadosValidos_retornaTransacao" />
+        <item itemvalue="JUnit.PedidoServiceTest" />
       </list>
     </recent_temporary>
   </component>

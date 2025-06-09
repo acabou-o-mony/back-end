@@ -44,7 +44,6 @@ public class PedidoService {
         itens.forEach(item -> item.setPedido(pedido));
 
         Pedido pedidoSalvo = pedidoRepository.save(pedido);
-
         return pedidoSalvo;
     }
 
