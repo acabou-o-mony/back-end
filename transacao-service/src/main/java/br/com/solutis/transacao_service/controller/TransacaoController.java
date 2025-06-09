@@ -24,6 +24,7 @@ public class TransacaoController {
     @Autowired
     private TransacaoService service;
 
+    @Autowired
     private TransacaoMapper mapper;
 
     private final WebClient pedidoWebClient;

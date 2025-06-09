@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e50bc7-cb52-4863-9c91-bad551360e2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/venda-service/locust/locust-script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_05_2025_10_34_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_05_2025_10_34__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/produto-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/produto-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/locust/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/locust/locustfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/TransacaoServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/TransacaoServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/controller/TransacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/java/br/com/solutis/transacao_service/controller/TransacaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/br/com/solutis/usuario_service/repository/ContaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/br/com/solutis/usuario_service/repository/ContaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venda-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/venda-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,22 +41,24 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ProdutoServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VendaServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PedidoServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransacaoServiceTests.criarTransacao_dadosValidos_retornaTransacao.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tales.ito/Documents/ElasticCode/Acabou o Mony/back-end&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProdutoServiceApplication.executor": "Run",
+    "Application.TransacaoServiceApplication.executor": "Run",
+    "Application.UsuarioServiceApplication.executor": "Run",
+    "Application.VendaServiceApplication.executor": "Run",
+    "JUnit.PedidoServiceTest.executor": "Run",
+    "JUnit.TransacaoServiceTests.criarTransacao_dadosValidos_retornaTransacao.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tales.ito/Documents/ElasticCode/Acabou o Mony/back-end",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -77,6 +81,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TransacaoServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.transacao_service.TransacaoServiceApplication" />
+      <module name="transacao-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.transacao_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsuarioServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.solutis.usuario_service.UsuarioServiceApplication" />
+      <module name="usuario-microservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.solutis.usuario_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VendaServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.venda_service.VendaServiceApplication" />
       <module name="venda-service" />
@@ -86,21 +116,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PedidoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="venda-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.solutis.venda_service.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.solutis.venda_service.service" />
-      <option name="MAIN_CLASS_NAME" value="br.com.solutis.venda_service.service.PedidoServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,10 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TransacaoServiceApplication" />
         <item itemvalue="Application.VendaServiceApplication" />
+        <item itemvalue="Application.UsuarioServiceApplication" />
         <item itemvalue="Application.ProdutoServiceApplication" />
         <item itemvalue="JUnit.TransacaoServiceTests.criarTransacao_dadosValidos_retornaTransacao" />
-        <item itemvalue="JUnit.PedidoServiceTest" />
       </list>
     </recent_temporary>
   </component>
