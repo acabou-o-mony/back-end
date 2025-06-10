@@ -47,6 +47,19 @@ ideal para pequenos e médios empreendedores, influenciadores digitais e e-comme
 
 ## 👥 Equipe e Responsabilidades
 
+
+Durante o desenvolvimento do projeto **Acabou o Mony**, algumas atividades foram realizadas de forma colaborativa por todos os membros do squad, como:
+
+- Implementação de testes unitários
+- Implementação de testes de cargas com o Locust
+- Implementação de testes de integração
+
+Além disso, algumas funcionalidades específicas foram desenvolvidas por membros específicos da equipe, como:
+
+- Implementação de autenticação com JWT no microsserviço de Usuario
+- Integração com o serviço de mensageria RabbitMQ para envio de notificações no microsserviço de Transação
+
+
 **Matheus Yukio Makiyama**  
 Responsável por: _[responsável pela modelagem do DER, Microsoft Planner, documentação do projeto e pelo microsserviço de Produto.]_
 
