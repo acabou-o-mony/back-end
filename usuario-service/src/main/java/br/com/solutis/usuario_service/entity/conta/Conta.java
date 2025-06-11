@@ -15,8 +15,12 @@ public class Conta {
     private Long id;
     private String numero;
     private String agencia;
+
+    @Enumerated(EnumType.STRING)
     private Tipo tipo;
     private Double saldo;
+
+    @Enumerated(EnumType.STRING)
     private Status status;
     private Date data_criacao;
 
