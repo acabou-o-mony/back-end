@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="38e50bc7-cb52-4863-9c91-bad551360e2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/br/com/solutis/api_gateway/controller/GatewayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/br/com/solutis/api_gateway/controller/GatewayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/br/com/solutis/api_gateway/filter/AuthWebFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/br/com/solutis/api_gateway/filter/AuthWebFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/produto-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/produto-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/transacao-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/br/com/solutis/usuario_service/entity/conta/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/br/com/solutis/usuario_service/entity/conta/Conta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario-service/src/main/java/br/com/solutis/usuario_service/config/jwtConfig/GerenciadorTokenJwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/java/br/com/solutis/usuario_service/config/jwtConfig/GerenciadorTokenJwt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/usuario-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venda-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/venda-service/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -73,7 +72,7 @@
       <recent name="br.com.solutis.venda_service.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.VendaServiceApplication">
+  <component name="RunManager" selected="Application.ApiGatewayApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.solutis.api_gateway.ApiGatewayApplication" />
       <module name="api-gateway" />

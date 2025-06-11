@@ -2,6 +2,7 @@ package br.com.solutis.usuario_service.config.jwtConfig;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
@@ -10,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.Date;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -35,7 +37,7 @@ public class GerenciadorTokenJwt {
                 .collect(Collectors.joining(","));
 
         return Jwts.builder().setSubject(authentication.getName())
-                .signWith(parseSecret()).setIssuedAt(new Date(System.currentTimeMillis()))
+                .signWith(parseSecret(), SignatureAlgorithm.HS512).setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + jwtTokenValidity * 1000)).compact();
     }
 
@@ -62,6 +64,6 @@ public class GerenciadorTokenJwt {
     }
 
     private SecretKey parseSecret(){
-        return Keys.hmacShaKeyFor(this.secret.getBytes(StandardCharsets.UTF_8));
+        return Keys.hmacShaKeyFor(Base64.getDecoder().decode(secret));
     }
 }

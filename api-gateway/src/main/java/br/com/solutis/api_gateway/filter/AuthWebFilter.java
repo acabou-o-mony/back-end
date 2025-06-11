@@ -64,6 +64,7 @@ public class AuthWebFilter implements WebFilter {
 
             String token = authHeader.substring(7);
             logger.info("Token JWT extraído: {}", token);
+            logger.info("Secret Key: {}", secretKey);
 
             Jwts.parserBuilder()
                     .setSigningKey(secretKey)
