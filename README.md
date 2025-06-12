@@ -70,6 +70,6 @@ Responsável por: _[responsável pela modelagem do DER e pelo microsserviço de 
 Responsável por: _[responsável pelo diagrama de solução, pelo API Gateway e pelo microsserviço de Transação]_
 
 **Raul Gomes Reis**  
-Responsável por: _[responsável pelo microsserviço de Conta, Usuário e Cartão]_
+Responsável por: _[responsável pelo microsserviço de Conta, Usuário e Cartão e implementação do JWT]_
 
 
